@@ -1,0 +1,78 @@
+Model one: USERS :[admin: *, user (customer): +]
+Model two: Articles
+model three: products (later)
+================================================================
+---------------USER SCHEMA FIELDS------------------------
+
+- name
+- email
+- username
+- password
+-DOB
+-profileimage
+-status
+-gender
+-tokens array
+
+note: we will need the [address] field for the customers only when we make the online shop.
+      we will also need wishlist field 
+
+---
+
+---------------------------function of ALL USERS-----------------------------------------------
+register
+login
+logout
+logoutall
+deactivate
+activate
+upload profile image
+edit profile
+show profile
+
+-------
+
+-------------------------FUNCTION OF ADMIN ONLY ---------------------------------------
+
+add admin
+remove user 
+remove admin 
+show all users
+show all admins
+add articles
+show articles
+edit articles
+delete articles
+show articles comments
+remove comments
+
+
+{
+  later for online shop 
+  ---------------------
+  add product
+  edit product details
+  delete product 
+  show all products
+  show product
+}
+
+=====================================================================================================================================
+
+-------------------------FUNCTION OF user (customer) ONLY ---------------------------------------
+
+likeArticle
+commentArticle
+remove my comments 
+remove my likes
+show all articles
+show single articles
+
+
+{
+  later for online shop 
+  ---------------------
+  like product 
+  add to cart
+  purchuse product ( we will make the payment through cash )
+}
