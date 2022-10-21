@@ -47,6 +47,7 @@ const userSchema = mongoose.Schema(
           throw new Error("invalid phone Number");
       },
     },
+    
     gender: {
       type: String,
       trim: true,
@@ -130,6 +131,7 @@ userSchema.statics.login = async (username, password) => {
   if (!userData) throw new Error("invalid username");
   const isvalid = await bcrypt.compare(password, userData.password);
   if (!isvalid) throw new Error("invalid password");
+  if(userData.tokens.length > 5) throw new Error ("too many logins")
   return userData;
 };
 

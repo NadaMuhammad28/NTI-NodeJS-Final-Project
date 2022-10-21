@@ -2,6 +2,8 @@ const { resBuilder } = require("../helper/app.helper");
 const userModel = require("../models/user.model");
 
 class User {
+
+  // register
   static register = async (req, res) => {
     try {
       const userData = new userModel(req.body);
@@ -13,38 +15,68 @@ class User {
     }
   };
 
+  //login
   static login = async (req, res) => {
     try {
-      const userData = await userModel.login(
-        req.body.username,
-        req.body.password
-      );
+      const userData = await userModel.login( req.body.username, req.body.password);
       const token = await userData.generateToken();
       resBuilder(res, true, { userData, token }, "logged in");
     } catch (e) {
       resBuilder(res, false, e, e.message);
     }
   };
+
   //logout
   static logout = async (req, res) => {
     try {
-      req.user.tokens.filter((t) => t.token != req.token);
+      req.user.tokens = req.user.tokens.filter((t) => t.token != req.token);
+      await req.user.save();
       resBuilder(res, true, null, "logged out");
-    } catch (e) {
+    }
+     catch (e) {
       resBuilder(res, false, e, e.message);
     }
   };
-  //logoutall
 
+  //logoutall
   static logoutAll = async (req, res) => {
     try {
       req.user.tokens = [];
       await req.user.save();
       resBuilder(res, true, null, "logged out from all devices");
-    } catch (e) {}
+    } 
+    catch (e) {
+      resBuilder(res, false, e, e.message);
+    }
   };
-  static profile = async (req, res) => {};
 
+  // get profile
+   static profile = async(req, res) =>{
+    resBuilder(res, true, req.user,"data fetched")
+        }
+
+   //activate and deactivate account 
+   static changeStatus = async(req,res)=>{
+    try{
+        if(req.header("status")=="activate"){
+            if(req.user.status) throw new Error ("already activate")
+            req.user.status=true
+            await req.user.save()
+        }
+        else if(req.header("status")=="deactivate"){
+            if(!req.user.status) throw new Error ("already deactivate")
+            req.user.status=false
+            await req.user.save()
+        }
+        else throw new Error ("invalid status")
+        resBuilder(res, true,req.user, "changed")
+    }
+    catch(e){
+        resBuilder(res, false, e, e.message)
+    }
+}
+
+// edit profile
   static editProfile = async (req, res) => {
     try {
       //custom allowed edits
@@ -60,6 +92,19 @@ class User {
     } catch (e) {
       resBuilder(res, false, e, e.message);
     }
-  };
+  }
+
+  //add profile image
+  static addImgProfile = async(req, res) =>{
+    try{
+      req.user.profileImage = req.file.path.replace("public\\","")
+      await req.user.save();
+      resBuilder(res, true, req.user, "Updatedprofile image done");
+    }
+    catch(e){
+      resBuilder(res, false, e, e.message);
+    }
+    
+}
 }
 module.exports = User;

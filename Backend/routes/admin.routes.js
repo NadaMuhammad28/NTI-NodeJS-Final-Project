@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const Admin = require("../controllers/admin.controller");
 const { auth, authAdmin, authUser } = require("../middleware/auth.middleware");
-
 const { login, logout, logoutAll } = require("../controllers/user.controller");
+
 router.post("/register", Admin.register);
 router.post("/login", login);
 router.post("/logout", auth, authAdmin, logout);

@@ -6,9 +6,9 @@ class Auth{
 
     static auth = async(req,res, next)=>{
         try{
-           const token = req.header("Authorization").replace("bearer ", "")
-           const decoded = jwt.verify(token, process.env.JWTKEY)
-           const userData = await userModel.findOne({
+           const token = req.header("Authorization").replace("bearer ", "")       // get token from header
+           const decoded = jwt.verify(token, process.env.JWTKEY)   //decode
+           const userData = await userModel.findOne({    //check token, id
                _id:decoded._id,
                "tokens.token":token
            })

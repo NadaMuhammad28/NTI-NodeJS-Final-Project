@@ -4,11 +4,11 @@ const cors = require("cors");
 
 require("dotenv").config();
 require("../db/connect");
+
 const app = express();
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-//
 app.use(cors());
 
 const adminRoutes = require("../routes/admin.routes");
