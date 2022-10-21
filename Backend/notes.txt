@@ -34,7 +34,7 @@ show profile            done
 -------------------------FUNCTION OF ADMIN ONLY ---------------------------------------
 add admin         done
 remove user       done
-remove admin      
+remove admin      done 
 show all users    done 
 show all admins   done
 add articles      done
