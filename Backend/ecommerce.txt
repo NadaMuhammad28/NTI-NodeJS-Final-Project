@@ -1,0 +1,24 @@
+category[subcategory, subcategory]
+
+
+admin --> CRUD category
+
+
+user--> read(explore)  category
+------------------------------------------------
+
+===============================================================================
+
+
+---------------PRODUCT MODEL---------------------------- 
+
+create product {
+  admin only done
+  image  (not yet)
+}
+
+delete all --> admin
+delete product --> admin
+update product --> admin
+get produt --> both
+get all (users, admin)

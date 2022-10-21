@@ -28,7 +28,9 @@ class User {
   //logout
   static logout = async (req, res) => {
     try {
-      req.user.tokens.filter((t) => t.token != req.token);
+      req.user.tokens = req.user.tokens.filter((t) => t.token != req.token);
+      await req.user.save();
+
       resBuilder(res, true, null, "logged out");
     } catch (e) {
       resBuilder(res, false, e, e.message);

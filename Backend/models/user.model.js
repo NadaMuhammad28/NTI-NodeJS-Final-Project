@@ -111,6 +111,21 @@ userSchema.virtual("userLikes", {
   foreignField: "likes.userId",
 });
 
+//---------------------------------------------------
+//virtual schemas for e-shop
+
+userSchema.virtual("Categories", {
+  ref: "Category",
+  localField: "_id",
+  foreignField: "adminId",
+});
+
+userSchema.virtual("Products", {
+  ref: "Product",
+  localField: "_id",
+  foreignField: "adminId",
+});
+//----------------------------------------------
 userSchema.methods.toJSON = function () {
   const userData = this.toObject();
   delete userData.__v;
