@@ -20,33 +20,29 @@ note: we will need the [address] field for the customers only when we make the o
 ---
 
 ---------------------------function of ALL USERS-----------------------------------------------
-register
-login
-logout
-logoutall
-deactivate
+register   done
+login      done 
+logout     done 
+logoutall  done 
+deactivate  
 activate
 upload profile image
 edit profile
 show profile
-
 -------
 
 -------------------------FUNCTION OF ADMIN ONLY ---------------------------------------
-
-add admin
-remove user 
-remove admin 
-show all users
-show all admins
+add admin         done
+remove user       done
+remove admin      
+show all users    done 
+show all admins   done
 add articles
 show articles
 edit articles
 delete articles
 show articles comments
 remove comments
-
-
 {
   later for online shop 
   ---------------------
@@ -76,3 +72,17 @@ show single articles
   add to cart
   purchuse product ( we will make the payment through cash )
 }
+-----------------------------------------------------------------------------------
+===================================================================================
+-----------------------------------------------------------------------------------
+---------------article SCHEMA FIELDS------------------------
+
+- title
+- type
+- username
+- password
+- DOB
+-profileimage
+-status
+-gender
+-tokens array
