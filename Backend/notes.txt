@@ -38,11 +38,11 @@ remove admin      done
 show all users    done 
 show all admins   done
 add articles      done
-show articles
+show articles     done
 edit articles
-delete articles
-show articles comments
-remove comments
+delete article   done
+show articles comments   done
+remove comments    done
 {
   later for online shop 
   ---------------------
@@ -58,10 +58,11 @@ remove comments
 -------------------------FUNCTION OF user (customer) ONLY ---------------------------------------
 
 likeArticle
-commentArticle
-remove my comments 
-remove my likes
-show all articles
+commentArticle   done
+remove my comments    done
+edit comment
+remove my likes   
+show all articles   done
 show single articles
 
 
