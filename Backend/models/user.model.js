@@ -143,15 +143,16 @@ userSchema.methods.generateToken = async function () {
   return token;
 };
 
-/*
+
 // remove user or admin
 const articleModel = require("./article.model");
 userSchema.pre("remove", async function (next) {
   await articleModel.deleteMany({ adminId: this._id });
-  //remove user comments
+  // remove user comments
+  
   //remove user likes
   next();
-});*/
+});
 
 const User = mongoose.model("User", userSchema);
 module.exports = User;

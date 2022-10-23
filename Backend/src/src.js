@@ -14,8 +14,10 @@ app.use(cors());
 const adminRoutes = require("../routes/admin.routes");
 const userRoutes = require("../routes/user.routes");
 const articleRoutes = require("../routes/article.routes");
+const orderRoutes = require("../routes/order.routes");
 app.use("/api/admin", adminRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/article", articleRoutes);
+app.use("/api/order", orderRoutes);
 
 module.exports = app;

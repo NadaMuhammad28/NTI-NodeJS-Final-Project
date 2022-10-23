@@ -39,7 +39,8 @@ const articleSchema = mongoose.Schema(
     ],
 
     comments: [
-      {
+      { 
+        comment:{
         commentBody: {
           type: String,
           required: true,
@@ -48,7 +49,11 @@ const articleSchema = mongoose.Schema(
         userId: {
           type: mongoose.Schema.Types.ObjectId,
         },
-      },
+      createdAt: {
+      type: Date,
+      default: () => Date.now(),
+    }}
+      }
     ],
   },
   {
@@ -58,3 +63,5 @@ const articleSchema = mongoose.Schema(
 
 const Article = mongoose.model("Article", articleSchema);
 module.exports = Article;
+
+
