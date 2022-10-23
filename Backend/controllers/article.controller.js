@@ -16,7 +16,7 @@ class Article{
     }
     }
 
-    //edit article  wrong
+    //edit article 
     static editArticle = async(req, res) =>{
         try{
             const article = await articleModel.findById(req.params.id)
@@ -30,14 +30,14 @@ class Article{
         }
     } 
 
+    //edit image   ....wrong
     static editImage = async(req, res) =>{
         try{
             
             const article = await articleModel.findById(req.params.id)
             article.image = req.file.path.replace("public\\","")
-            
             await article.save()
-            resBuilder(res, true, article, "article edited")
+            resBuilder(res, true, article, "image edited")
         }
         catch(e){
             resBuilder(res, false, e, e.message)
@@ -60,6 +60,18 @@ class Article{
         try{
             const articles = await articleModel.find()
             resBuilder(res, true, articles, "all articles fetched");
+        }
+        catch(e){
+            resBuilder(res, false, e, e.message);
+        }
+    }
+
+    // show my articles by admin   ....wrong
+    static myArticles = async(req,res)=>{
+        try{
+            const articles = await articleModel.findById(req.params.id)   // admin id
+            console.log(articles)
+            resBuilder(res, true, articles, "my articles fetched");
         }
         catch(e){
             resBuilder(res, false, e, e.message);
@@ -103,7 +115,7 @@ class Article{
     }
 }
 
-  // edit comment by user   wrong
+  // edit comment by user   .... wrong
   static editComment = async(req, res) =>{
     try{
         const comment = await articleModel.findById(req.params.id)   //id comment
@@ -130,7 +142,7 @@ static likeArticle = async(req, res) =>{
     }
 }
 
-// unlike article    ........wrong
+// unlike article  
 static unlikeArticle = async(req, res) =>{
     try{
         const article = await articleModel.findById(req.params.id)  // id article
@@ -145,10 +157,10 @@ static unlikeArticle = async(req, res) =>{
     }
 }
 
-// show single article
+// show single article 
 static singleArticle = async(req,res) =>{
     try{
-        const article = await articleModel.findById(req.params.id)
+        const article = await articleModel.findById(req.params.id)  
         resBuilder(res, true, {article,"num of likes": article.likes.length}, "article data is fetched")
     }
     catch(e){
