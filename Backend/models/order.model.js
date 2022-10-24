@@ -12,7 +12,7 @@ const orderSchema = mongoose.Schema(
       type: String,
       default: "processing",
       lowercase: true,
-      enum: ["cancelled", "delivered", "shipped", "processing"]
+      enum: ["cancelled", "delivered", "shipped", "processing"],
     },
 
     phoneNumber: {
@@ -24,12 +24,8 @@ const orderSchema = mongoose.Schema(
           throw new Error("invalid phone Number");
       },
     },
-    cart: {
-      cartId: mongoose.Schema.Types.ObjectId,
-      ref: "Cart",
-      required: true
-    }
-,
+
+    orderItems: [],
     /* orderItems: [
       {
         productId: {

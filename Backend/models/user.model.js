@@ -165,21 +165,16 @@ userSchema.methods.generateToken = async function () {
   return token;
 };
 
-
 // remove user or admin
 const articleModel = require("./article.model");
 userSchema.pre("remove", async function (next) {
   await articleModel.deleteMany({ adminId: this._id });
   // remove user comments
-  
+
   //remove user likes
   next();
-<<<<<<< HEAD
-=======
 });
->>>>>>> fc704e0ba68d0406fb31f20c2c6a87d4130d4d72
 
-});*/
 const productModel = require("./product.model");
 userSchema.pre("remove", async function (next) {
   await productModel.deleteMany({ adminId: this._id });
