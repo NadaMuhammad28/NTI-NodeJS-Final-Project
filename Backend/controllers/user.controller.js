@@ -100,23 +100,19 @@ class User {
     } catch (e) {
       resBuilder(res, false, e, e.message);
     }
-<<<<<<< HEAD
   };
-=======
-    
-}
 
-//delete user by admin
+   //delete user by admin
 static deleteUSer = async (req, res) => {
   try {
     const deletedUSer = await userModel.findByIdAndDelete(req.params.userId);
     if(!deletedUSer) throw new Error("user not found")
+    deletedUSer.remove()
     resBuilder(res, true, null, "user is removed successfully");
   } catch (e) {
     resBuilder(res, false, e, e.message);
   }
 };
-
 
 //delete all users by admin  
 static delMany = async(req,res)=>{  
@@ -127,8 +123,6 @@ static delMany = async(req,res)=>{
   catch(e){
     resBuilder(res, false, e, e.message);
   }
-
->>>>>>> fc704e0ba68d0406fb31f20c2c6a87d4130d4d72
 }
 
 //show single user
@@ -153,7 +147,5 @@ static showAllUsers = async (req, res) => {
 };
 
 }
-
-
 
 module.exports = User;
