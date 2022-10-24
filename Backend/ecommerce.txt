@@ -10,15 +10,33 @@ user--> read(explore)  category
 ===============================================================================
 
 
----------------PRODUCT MODEL---------------------------- 
+---------------PRODUCT MODEL/CONTROLLER---------------------------- 
 
 create product {
-  admin only done
-  image  (not yet)
+  admin only done          done
+  image  (not yet)        done needs to be tested and edited
 }
 
-delete all --> admin
-delete product --> admin
-update product --> admin
-get produt --> both
-get all (users, admin)
+delete all --> admin       done 
+delete product --> admin   done
+update product --> admin   done
+get produt --> both        done
+get all (users, admin)     done 
+======================================================================================================================================================
+----------------------------------------------------CART MODEL/CONTROLLER---------------------------------------------------------------------------
+add to cart   done ( we need to handle if the product id doesn't exisit)
+view cart items     done 
+get all products from cart   done 
+remove a product from cart (-1 or all)  all--> done
+empty the cart   done
+calculate the total price  done but there's an err when i add a new product the total price goes to zerp in the db, but it works on postman
+
+
+==================================================================================================================================================
+----------------------------------------------------ORDER MODEL/CONTROLLER---------------------------------------------------------------------------
+
+
+
+
+
+

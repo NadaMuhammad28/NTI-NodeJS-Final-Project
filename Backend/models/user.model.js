@@ -47,6 +47,7 @@ const userSchema = mongoose.Schema(
           throw new Error("invalid phone Number");
       },
     },
+
     gender: {
       type: String,
       trim: true,
@@ -125,6 +126,13 @@ userSchema.virtual("Products", {
   localField: "_id",
   foreignField: "adminId",
 });
+
+userSchema.virtual("userLikes", {
+  ref: "Cart",
+  localField: "_id",
+  foreignField: "userId",
+});
+
 //----------------------------------------------
 userSchema.methods.toJSON = function () {
   const userData = this.toObject();
@@ -145,6 +153,7 @@ userSchema.statics.login = async (username, password) => {
   if (!userData) throw new Error("invalid username");
   const isvalid = await bcrypt.compare(password, userData.password);
   if (!isvalid) throw new Error("invalid password");
+  // if (userData.tokens.length > 5) throw new Error("too many logins");
   return userData;
 };
 
@@ -164,7 +173,14 @@ userSchema.pre("remove", async function (next) {
   //remove user comments
   //remove user likes
   next();
-});*/
 
+});*/
+const productModel = require("./product.model");
+userSchema.pre("remove", async function (next) {
+  await productModel.deleteMany({ adminId: this._id });
+  //remove user comments
+  //remove user likes
+  next();
+});
 const User = mongoose.model("User", userSchema);
 module.exports = User;

@@ -1,28 +1,52 @@
 const router = require("express").Router();
 const Product = require("../controllers/product.controller");
 const { auth, authAdmin, authUser } = require("../middleware/auth.middleware");
+const upload = require("../middleware/fileUpload.middleware");
+
 //create
-router.post("/createProduct", auth, authAdmin, Product.createProduct);
-
-/*
-//get all categories
-router.get("/showCategories", Category.showAllCategories);
-
-//get single category
-router.get("/showCategories", Category.showCategory);
-
-//update category
-router.post("/updateCategory", auth, authAdmin, Category.updateCategory);
-
-//delete category
-router.delete("/deleteCategory", auth, authAdmin, Category.deleteCategory);
-
-//deleteallcategories
-router.delete(
-  "/deleteAllCategories",
+router.post(
+  "/createProduct",
   auth,
   authAdmin,
-  Category.deleteAllCategories
+  upload.single("image"),
+  Product.createProduct
 );
-*/
+
+//deleteProduct
+router.delete(
+  "/deleteProduct/:productId",
+  auth,
+  authAdmin,
+  Product.deleteProduct
+);
+
+//deleteallProduct
+router.delete("/deleteAllProducts", auth, authAdmin, Product.deleteAllProducts);
+
+// PRODUCT BY ID
+router.get("/getProduct/:productId", Product.getProduct);
+
+// PRODUCT BY slug
+router.get("/getProductBySlug/:productSlug", Product.getProductBySLug);
+
+// get all
+router.get("/getAllProducts/", Product.getAllProducts);
+
+//update product
+router.post(
+  "/updateProduct/:productId",
+  auth,
+  authAdmin,
+  Product.updateProduct
+);
+
+//upload
+router.post(
+  "/uploadImage/:productId",
+  auth,
+  authAdmin,
+  upload.single("image"),
+  Product.uploadImages
+);
+
 module.exports = router;

@@ -20,15 +20,15 @@ note: we will need the [address] field for the customers only when we make the o
 ---
 
 ---------------------------function of ALL USERS-----------------------------------------------
-register   done
-login      done 
-logout     done 
-logoutall  done 
-deactivate  
-activate
+register                done
+login                   done 
+logout                  done 
+logoutall               done 
+deactivate              done
+activate                done
 upload profile image
-edit profile
-show profile
+edit profile            done
+show profile            done
 -------
 
 -------------------------FUNCTION OF ADMIN ONLY ---------------------------------------
@@ -86,3 +86,7 @@ show single articles
 -status
 -gender
 -tokens array
+
+
+
+

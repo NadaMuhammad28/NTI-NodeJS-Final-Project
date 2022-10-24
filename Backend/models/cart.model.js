@@ -1,59 +1,35 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
 
-const productSchema = mongoose.Schema(
+const cartSchema = mongoose.Schema(
   {
-    adminId: {
+    userId: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
     },
 
-    name: {
-      type: String,
-      trim: true,
-      required: true,
-    },
-
-    price: {
-      type: Number,
-      required: true,
-    },
-
-    images: [
+    cartItems: [
       {
-        image: {
-          type: String,
-          trim: true,
-          default: "download.png",
+        productId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Product",
+          required: true,
         },
+        quantity: { type: Number, default: 1, required: true },
+        //price: { type: Number, required: true }
       },
     ],
 
-    qunatity: {
+    totalPrice: {
       type: Number,
-      required: true,
       default: 0,
     },
-
-    description: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-
-    category: {
-      type: mongoose.Schema.Types.ObjectId,
-    },
-
-    //extra
-    //reviews
-    //color
-    //size
   },
+
   {
     timestamps: true,
   }
 );
-const Product = mongoose.model("product", productSchema);
+const Cart = mongoose.model("Cart", cartSchema);
 
-module.exports = Product;
+module.exports = Cart;

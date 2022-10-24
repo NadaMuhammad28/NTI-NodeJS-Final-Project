@@ -18,7 +18,16 @@ const productSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
-
+    slug: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    image: {
+      type: String,
+      trim: true,
+    },
+    /*
     images: [
       {
         image: {
@@ -27,23 +36,24 @@ const productSchema = mongoose.Schema(
           default: "download.png",
         },
       },
-    ],
-
+    ],*/
+    /*
     qunatity: {
       type: Number,
       required: true,
       default: 0,
     },
+    */
 
     description: {
       type: String,
       required: true,
       trim: true,
-    },
-
+    } /*
     category: {
       type: mongoose.Schema.Types.ObjectId,
-    },
+      ref: Category,
+    },*/,
 
     //extra
     //reviews
@@ -54,6 +64,12 @@ const productSchema = mongoose.Schema(
     timestamps: true,
   }
 );
-const Product = mongoose.model("product", productSchema);
+productSchema.methods.toJSON = function () {
+  const product = this.toObject();
+  delete product.__v;
+  return product;
+};
+
+const Product = mongoose.model("Product", productSchema);
 
 module.exports = Product;
