@@ -14,15 +14,20 @@ app.use(cors());
 const adminRoutes = require("../routes/admin.routes");
 const userRoutes = require("../routes/user.routes");
 const articleRoutes = require("../routes/article.routes");
+<<<<<<< HEAD
 //shop
 const productRoutes = require("../routes/product.routes");
 
 const categoryRoutes = require("../routes/category.routes");
 const cartRoutes = require("../routes/cart.routes");
 
+=======
+const orderRoutes = require("../routes/order.routes");
+>>>>>>> fc704e0ba68d0406fb31f20c2c6a87d4130d4d72
 app.use("/api/admin", adminRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/article", articleRoutes);
+app.use("/api/order", orderRoutes);
 
 //shop
 app.use("/api/category", categoryRoutes);

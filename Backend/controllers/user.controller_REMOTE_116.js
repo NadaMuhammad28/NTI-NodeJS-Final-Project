@@ -2,6 +2,7 @@ const { resBuilder } = require("../helper/app.helper");
 const userModel = require("../models/user.model");
 
 class User {
+
   // register
   static register = async (req, res) => {
     try {
@@ -17,10 +18,7 @@ class User {
   //login
   static login = async (req, res) => {
     try {
-      const userData = await userModel.login(
-        req.body.username,
-        req.body.password
-      );
+      const userData = await userModel.login( req.body.username, req.body.password);
       const token = await userData.generateToken();
       resBuilder(res, true, { userData, token }, "logged in");
     } catch (e) {
@@ -34,7 +32,8 @@ class User {
       req.user.tokens = req.user.tokens.filter((t) => t.token != req.token);
       await req.user.save();
       resBuilder(res, true, null, "logged out");
-    } catch (e) {
+    }
+     catch (e) {
       resBuilder(res, false, e, e.message);
     }
   };
@@ -45,35 +44,39 @@ class User {
       req.user.tokens = [];
       await req.user.save();
       resBuilder(res, true, null, "logged out from all devices");
-    } catch (e) {
+    } 
+    catch (e) {
       resBuilder(res, false, e, e.message);
     }
   };
 
   // get profile
-  static profile = async (req, res) => {
-    resBuilder(res, true, req.user, "data fetched");
-  };
+   static profile = async(req, res) =>{
+    resBuilder(res, true, req.user,"data fetched")
+        }
 
-  //activate and deactivate account
-  static changeStatus = async (req, res) => {
-    try {
-      if (req.header("status") == "activate") {
-        if (req.user.status) throw new Error("already activate");
-        req.user.status = true;
-        await req.user.save();
-      } else if (req.header("status") == "deactivate") {
-        if (!req.user.status) throw new Error("already deactivate");
-        req.user.status = false;
-        await req.user.save();
-      } else throw new Error("invalid status");
-      resBuilder(res, true, req.user, "changed");
-    } catch (e) {
-      resBuilder(res, false, e, e.message);
+   //activate and deactivate account 
+   static changeStatus = async(req,res)=>{
+    try{
+        if(req.header("status")=="activate"){
+            if(req.user.status) throw new Error ("already activate")
+            req.user.status=true
+            await req.user.save()
+        }
+        else if(req.header("status")=="deactivate"){
+            if(!req.user.status) throw new Error ("already deactivate")
+            req.user.status=false
+            await req.user.save()
+        }
+        else throw new Error ("invalid status")
+        resBuilder(res, true,req.user, "changed")
     }
-  };
+    catch(e){
+        resBuilder(res, false, e, e.message)
+    }
+}
 
-  // edit profile
+// edit profile
   static editProfile = async (req, res) => {
     try {
       //custom allowed edits
@@ -89,20 +92,18 @@ class User {
     } catch (e) {
       resBuilder(res, false, e, e.message);
     }
-  };
+  }
 
   //add profile image
-  static addImgProfile = async (req, res) => {
-    try {
-      req.user.profileImage = req.file.path.replace("public\\", "");
+  static addImgProfile = async(req, res) =>{
+    try{
+      req.user.profileImage = req.file.path.replace("public\\","")
       await req.user.save();
       resBuilder(res, true, req.user, "Updatedprofile image done");
-    } catch (e) {
+    }
+    catch(e){
       resBuilder(res, false, e, e.message);
     }
-<<<<<<< HEAD
-  };
-=======
     
 }
 
@@ -128,7 +129,6 @@ static delMany = async(req,res)=>{
     resBuilder(res, false, e, e.message);
   }
 
->>>>>>> fc704e0ba68d0406fb31f20c2c6a87d4130d4d72
 }
 
 //show single user

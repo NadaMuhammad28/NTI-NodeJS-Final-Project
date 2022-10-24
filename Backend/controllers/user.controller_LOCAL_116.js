@@ -77,7 +77,7 @@ class User {
   static editProfile = async (req, res) => {
     try {
       //custom allowed edits
-      const allowedEdits = ["name", "email", "username"];
+      const allowedEdits = ["name", "email", "username", "profileImage"];
       const keys = Object.keys(req.body);
       //check if the body contains forbiddedn keys
       const isValid = keys.every((el) => allowedEdits.includes(el));
@@ -100,60 +100,6 @@ class User {
     } catch (e) {
       resBuilder(res, false, e, e.message);
     }
-<<<<<<< HEAD
   };
-=======
-    
 }
-
-//delete user by admin
-static deleteUSer = async (req, res) => {
-  try {
-    const deletedUSer = await userModel.findByIdAndDelete(req.params.userId);
-    if(!deletedUSer) throw new Error("user not found")
-    resBuilder(res, true, null, "user is removed successfully");
-  } catch (e) {
-    resBuilder(res, false, e, e.message);
-  }
-};
-
-
-//delete all users by admin  
-static delMany = async(req,res)=>{  
-  try{
-      const users = await userModel.find({userType: "user"}).deleteMany()
-      resBuilder(res, true, null,"all users deleted")
-  }
-  catch(e){
-    resBuilder(res, false, e, e.message);
-  }
-
->>>>>>> fc704e0ba68d0406fb31f20c2c6a87d4130d4d72
-}
-
-//show single user
-static single = async(req,res)=>{
-  try{
-      const user = await userModel.findById(req.params.id)
-      if(!user) throw new Error("user not found")
-      resBuilder(res, true, user,"single user data fetched")
-  }
-  catch(e){
-    resBuilder(res, false, e,e.message)
-  }
-}
-// show all users
-static showAllUsers = async (req, res) => {
-  try {
-    const allUSers = await userModel.find();
-    resBuilder(res, true, allUSers, "all users returned");
-  } catch (e) {
-    resBuilder(res, false, e, e.message);
-  }
-};
-
-}
-
-
-
 module.exports = User;
