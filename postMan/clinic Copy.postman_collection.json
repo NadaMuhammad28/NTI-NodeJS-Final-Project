@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "f82a348a-4d72-491b-8b88-1d566391211b",
+		"_postman_id": "ee5cbf44-ce09-4f52-ba4e-fadfa2459105",
 		"name": "clinic Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "23907854"
+		"_exporter_id": "23941943"
 	},
 	"item": [
 		{
@@ -342,7 +342,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/admin/register",
+							"raw": "http://localhost:3000/api/user/register",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -350,7 +350,7 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"admin",
+								"user",
 								"register"
 							]
 						}
@@ -372,7 +372,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/admin/login",
+							"raw": "http://localhost:3000/api/user/login",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -380,7 +380,7 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"admin",
+								"user",
 								"login"
 							]
 						}
@@ -822,7 +822,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzUzNzQ3NTIyNTIwM2M2ZDBjYmNiNWEiLCJpYXQiOjE2NjY0MTM3MDB9.gGsgfFmHDksfRDCxvIZXPoxLeCh8JjIGE9GBeCkoJbM",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU3MGVkZGMwNjIyMTI2ZDQzMTY3YTMiLCJpYXQiOjE2NjY2NDk4MzB9.qMZ3p3uPI0lIDhKkJGphTwa867rJdwHAIgPFHLc20Do",
 								"type": "text"
 							}
 						],
@@ -876,7 +876,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzUzNzQ3NTIyNTIwM2M2ZDBjYmNiNWEiLCJpYXQiOjE2NjY0MTM3MDB9.gGsgfFmHDksfRDCxvIZXPoxLeCh8JjIGE9GBeCkoJbM",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU3MGVkZGMwNjIyMTI2ZDQzMTY3YTMiLCJpYXQiOjE2NjY2NDk4MzB9.qMZ3p3uPI0lIDhKkJGphTwa867rJdwHAIgPFHLc20Do",
 								"type": "text"
 							}
 						],
@@ -890,7 +890,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/cart/addToCart/63548c24d3ef45e594effa41",
+							"raw": "http://localhost:3000/api/cart/addToCart/6358c8592ee2e1982b3a4eb0",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -900,7 +900,7 @@
 								"api",
 								"cart",
 								"addToCart",
-								"63548c24d3ef45e594effa41"
+								"6358c8592ee2e1982b3a4eb0"
 							],
 							"query": [
 								{
@@ -916,7 +916,7 @@
 			]
 		},
 		{
-			"name": "product Copy",
+			"name": "product",
 			"item": [
 				{
 					"name": "CREATE PRODUCT",
@@ -925,18 +925,34 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzUxYjdkMjE0YzE1MGFiYzMyYjI2NjgiLCJpYXQiOjE2NjYzOTU0OTB9.Zy5Rgw8UC7SXUeWSzyk0NCGOX6VwyDAHI0Zr1gfs3yg",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU4Yzc2YTJlZTJlMTk4MmIzYTRlYTEiLCJpYXQiOjE2NjY3NjI2MDd9.8jjeCRF74sXoAEo4GTmWl1PZeD2rUBt6Px_g3Lh3ZI4",
 								"type": "text"
 							}
 						],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n\r\n    \"name\": \"wig\",\r\n    \"price\": \"5\",\r\n    \"description\": \"amazing  \"\r\n\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "gggg",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "hgg ggg ggg",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Salma-PC/Desktop/images (1).jpeg"
 								}
-							}
+							]
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/product/createProduct",
@@ -1036,7 +1052,7 @@
 							"query": [
 								{
 									"key": "",
-									"value": null,
+									"value": "",
 									"disabled": true
 								}
 							]
@@ -1071,7 +1087,7 @@
 							"query": [
 								{
 									"key": "",
-									"value": null,
+									"value": "",
 									"disabled": true
 								}
 							]
@@ -1170,6 +1186,103 @@
 								"product",
 								"uploadImage",
 								"635331200cd525be36df588c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "add order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU3MGVkZGMwNjIyMTI2ZDQzMTY3YTMiLCJpYXQiOjE2NjY2NDk4MzB9.qMZ3p3uPI0lIDhKkJGphTwa867rJdwHAIgPFHLc20Do",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phoneNumber\":\"+201275321056\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/order/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"order",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete order",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU3MGVkZGMwNjIyMTI2ZDQzMTY3YTMiLCJpYXQiOjE2NjY2NDk4MzB9.qMZ3p3uPI0lIDhKkJGphTwa867rJdwHAIgPFHLc20Do",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/order/deleteOrder/6358c9a52ee2e1982b3a4ed0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"order",
+								"deleteOrder",
+								"6358c9a52ee2e1982b3a4ed0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Order",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU3MGVkZGMwNjIyMTI2ZDQzMTY3YTMiLCJpYXQiOjE2NjY2NDk4MzB9.qMZ3p3uPI0lIDhKkJGphTwa867rJdwHAIgPFHLc20Do",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/order/getOrder/6358ce2e1495f07bf1a26569",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"order",
+								"getOrder",
+								"6358ce2e1495f07bf1a26569"
 							]
 						}
 					},
