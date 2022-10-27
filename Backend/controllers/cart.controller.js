@@ -80,9 +80,6 @@ class Cart {
     }
   };
 
-  // this function will decrement the quantity of theat item by one
-  static removeOneCartItem = async (req, res) => {};
-
   static emptyCart = async (req, res) => {
     try {
       const cart = await cartModel.findOneAndDelete({ userId: req.user._id });
@@ -108,5 +105,20 @@ class Cart {
       resBuilder(res, false, e, e.message);
     }
   };
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //-----------------------------------------------ADMIN  FUNCTIONALITIES--------------------------------------------------
+  //show all carts
+
+  static getAllCarts = async (req, res) => {
+    try {
+      const carts = await cartModel
+        .find()
+        .populate({ path: "cartItems.productId", model: Product });
+      resBuilder(res, true, carts, "ALL carts RETURNED");
+    } catch (e) {
+      resBuilder(res, false, e, e.message);
+    }
+  };
 }
+
 module.exports = Cart;

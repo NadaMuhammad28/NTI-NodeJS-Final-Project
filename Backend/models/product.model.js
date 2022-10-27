@@ -20,14 +20,16 @@ const productSchema = mongoose.Schema(
     },
     slug: {
       type: String,
+      lowercase: true,
       required: true,
       unique: true,
+      trim: true,
     },
     image: {
       type: String,
       trim: true,
     },
-    /*
+
     images: [
       {
         image: {
@@ -36,14 +38,7 @@ const productSchema = mongoose.Schema(
           default: "download.png",
         },
       },
-    ],*/
-    /*
-    qunatity: {
-      type: Number,
-      required: true,
-      default: 0,
-    },
-    */
+    ],
 
     description: {
       type: String,
@@ -54,11 +49,6 @@ const productSchema = mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: Category,
     },*/,
-
-    //extra
-    //reviews
-    //color
-    //size
   },
   {
     timestamps: true,

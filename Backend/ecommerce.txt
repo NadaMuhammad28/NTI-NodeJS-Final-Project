@@ -39,4 +39,10 @@ calculate the total price  done but there's an err when i add a new product the 
 
 
 
+add order : DONE
+search for the cart of that user 
+dd the products in the order
+delete the cart
 
+
+GET ORDER -->

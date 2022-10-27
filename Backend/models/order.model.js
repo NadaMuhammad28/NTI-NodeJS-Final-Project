@@ -14,7 +14,6 @@ const orderSchema = mongoose.Schema(
       lowercase: true,
       enum: ["cancelled", "delivered", "shipped", "processing"],
     },
-
     phoneNumber: {
       type: String,
       trim: true,
@@ -40,7 +39,7 @@ const orderSchema = mongoose.Schema(
 
     addresses: [
       {
-        addrTye: {
+        addrType: {
           type: String,
           trim: true,
           required: true,

@@ -1,11 +1,10 @@
 const orderModel = require("../models/order.model");
 const cartModel = require("../models/cart.model");
-
+const ProductModel = require("../models/product.model");
 const { resBuilder } = require("../helper/app.helper");
 
 class Order {
-
-    //add order
+  //add order
   static addOrder = async (req, res) => {
     try {
       const userCart = await cartModel.findOne({ userId: req.user._id });
@@ -16,6 +15,7 @@ class Order {
           ...req.body,
         });
         await order.save();
+        await cartModel.deleteOne(userCart);
         resBuilder(res, true, order, "New order is added");
       }
     } catch (e) {
@@ -23,29 +23,60 @@ class Order {
     }
   };
 
+  // get order
+  static getOrder = async (req, res) => {
+    try {
+      const order = await orderModel
+        .findById(req.params.id)
+        .populate({ path: "orderItems.productId", model: ProductModel });
+      if (!order) throw new Error("order not found");
+      resBuilder(res, true, order, "order data is fetched");
+    } catch (e) {
+      resBuilder(res, false, e, e.message);
+    }
+  };
+
+  //GET ALL ORDERS BY THIS USER
+  static getUSerAllOrders = async (req, res) => {
+    try {
+      const orders = await orderModel
+        .find({ userId: req.user._id })
+        .populate({ path: "orderItems.productId", model: ProductModel });
+      resBuilder(res, true, orders, "order data is fetched");
+    } catch (e) {
+      resBuilder(res, false, e, e.message);
+    }
+  };
+
   //delete order by user
   static deleteOrder = async (req, res) => {
     try {
-      await orderModel.findByIdAndDelete(req.params.id)  // id order 
-      resBuilder(res, true, null, "order is deleted");
-
+      const order = await orderModel.findOne({ _id: req.params.id });
+      if (order.status == "processing") {
+        await orderModel.deleteOne(order);
+        resBuilder(res, true, null, "order is deleted");
       }
-     catch (e) {
+      if (order.status != "processing")
+        throw new Error("order has been shipped");
+    } catch (e) {
       resBuilder(res, false, e, e.messgae);
     }
   };
 
-  // get order
-  static getOrder = async(req,res) =>{
-    try{
-        const order = await orderModel.findById(req.params.id)   //order id
-        resBuilder(res, true, order, "order data is fetched")
+  /////////////////////////////////////////////////////////////////////////////////////
+  static getALLOrders = async (req, res) => {
+    try {
+      const orders = await orderModel
+        .find()
+        .populate({ path: "orderItems.productId", model: ProductModel });
+      if (!orders) throw new Error("order not found");
+      resBuilder(res, true, orders, "order data is fetched");
+    } catch (e) {
+      resBuilder(res, false, e, e.message);
     }
-    catch(e){
-        resBuilder(res, false, e, e.message)
-    }
-}
-/*
+  };
+
+  /*
 // update status by admin
 static changeStatus = async (req, res) => {
     try {
@@ -75,10 +106,8 @@ static changeStatus = async (req, res) => {
     
 }
 */
-// get all orders
+  // get all orders
 
-// get my orders
-
-
+  // get my orders
 }
 module.exports = Order;

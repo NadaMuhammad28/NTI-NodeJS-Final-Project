@@ -1,10 +1,15 @@
-const router = require("express").Router()
-const Order= require("../controllers/order.controller")
-const { auth, authUser, authAdmin } = require("../middleware/auth.middleware")
-const upload = require("../middleware/fileUpload.middleware")
+const router = require("express").Router();
+const Order = require("../controllers/order.controller");
+const { auth, authUser, authAdmin } = require("../middleware/auth.middleware");
+const upload = require("../middleware/fileUpload.middleware");
 
 router.post("/add", auth, authUser, Order.addOrder);
-router.delete("/deleteOrder/:id",auth,authUser,Order.deleteOrder) 
-router.get("/getOrder/:id", auth, Order.getOrder)
+router.get("/getOrder/:id", auth, Order.getOrder);
+//GET ALL ORDERS OF A USER
+router.get("/getAllOrders", auth, authUser, Order.getUSerAllOrders);
 
-module.exports = router
+router.delete("/deleteOrder/:id", auth, authUser, Order.deleteOrder);
+///////////////ADMIN//////////////////////////////
+router.get("/allOrders", auth, authAdmin, Order.getALLOrders);
+
+module.exports = router;

@@ -102,50 +102,48 @@ class User {
     }
   };
 
-   //delete user by admin
-static deleteUSer = async (req, res) => {
-  try {
-    const deletedUSer = await userModel.findByIdAndDelete(req.params.userId);
-    if(!deletedUSer) throw new Error("user not found")
-    deletedUSer.remove()
-    resBuilder(res, true, null, "user is removed successfully");
-  } catch (e) {
-    resBuilder(res, false, e, e.message);
-  }
-};
+  //delete user by admin
+  static deleteUSer = async (req, res) => {
+    try {
+      const deletedUSer = await userModel.findByIdAndDelete(req.params.userId);
+      if (!deletedUSer) throw new Error("user not found");
+      deletedUSer.remove();
 
-//delete all users by admin  
-static delMany = async(req,res)=>{  
-  try{
-      const users = await userModel.find({userType: "user"}).deleteMany()
-      resBuilder(res, true, null,"all users deleted")
-  }
-  catch(e){
-    resBuilder(res, false, e, e.message);
-  }
-}
+      resBuilder(res, true, null, "user is removed successfully");
+    } catch (e) {
+      resBuilder(res, false, e, e.message);
+    }
+  };
 
-//show single user
-static single = async(req,res)=>{
-  try{
-      const user = await userModel.findById(req.params.id)
-      if(!user) throw new Error("user not found")
-      resBuilder(res, true, user,"single user data fetched")
-  }
-  catch(e){
-    resBuilder(res, false, e,e.message)
-  }
-}
-// show all users
-static showAllUsers = async (req, res) => {
-  try {
-    const allUSers = await userModel.find();
-    resBuilder(res, true, allUSers, "all users returned");
-  } catch (e) {
-    resBuilder(res, false, e, e.message);
-  }
-};
+  //delete all users by admin
+  static delMany = async (req, res) => {
+    try {
+      const users = await userModel.find({ userType: "user" }).deleteMany();
+      resBuilder(res, true, null, "all users deleted");
+    } catch (e) {
+      resBuilder(res, false, e, e.message);
+    }
+  };
 
+  //show single user
+  static single = async (req, res) => {
+    try {
+      const user = await userModel.findById(req.params.id);
+      if (!user) throw new Error("user not found");
+      resBuilder(res, true, user, "single user data fetched");
+    } catch (e) {
+      resBuilder(res, false, e, e.message);
+    }
+  };
+  // show all users
+  static showAllUsers = async (req, res) => {
+    try {
+      const allUSers = await userModel.find();
+      resBuilder(res, true, allUSers, "all users returned");
+    } catch (e) {
+      resBuilder(res, false, e, e.message);
+    }
+  };
 }
 
 module.exports = User;

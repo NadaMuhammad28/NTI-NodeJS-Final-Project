@@ -1,7 +1,7 @@
 const productModel = require("../models/product.model");
 const { resBuilder } = require("../helper/app.helper");
 const slugify = require("slugify");
-class Category {
+class Product {
   static createProduct = async (req, res) => {
     try {
       const product = new productModel(req.body);
@@ -21,6 +21,7 @@ class Category {
       const deletedProduct = await productModel.findByIdAndDelete(
         req.params.productId
       );
+      // if(!deletedProduct) throw new Error('not found')
       if (deletedProduct == undefined) throw new Error("product id not found");
       resBuilder(res, true, null, "product is removed successfully");
     } catch (e) {
@@ -53,6 +54,9 @@ class Category {
       const productData = await productModel.findOne({
         slug: req.params.productSlug,
       });
+      console.log(productData);
+
+      if (!productData) throw new Error("not found");
       resBuilder(res, true, productData, "product returned");
     } catch (e) {
       resBuilder(res, false, e, e.message);
@@ -97,6 +101,17 @@ class Category {
     }
   };
 
+  static editImage = async (req, res) => {
+    try {
+      const product = await productModel.findById(req.params.id);
+      product.image = req.file.path.replace("public\\", "");
+      await product.save();
+      resBuilder(res, true, product, "image edited");
+    } catch (e) {
+      resBuilder(res, false, e, e.message);
+    }
+  };
+  /*
   static uploadImages = async (req, res) => {
     try {
       const product = await productModel.findById(req.params.productId);
@@ -106,6 +121,6 @@ class Category {
     } catch (e) {
       resBuilder(res, false, e, e.message);
     }
-  };
+  };*/
 }
-module.exports = Category;
+module.exports = Product;

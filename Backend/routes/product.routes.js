@@ -39,14 +39,13 @@ router.post(
   authAdmin,
   Product.updateProduct
 );
-
-//upload
+// edit image
 router.post(
-  "/uploadImage/:productId",
+  "/editImage/:id",
   auth,
   authAdmin,
   upload.single("image"),
-  Product.uploadImages
+  Product.editImage
 );
 
 module.exports = router;

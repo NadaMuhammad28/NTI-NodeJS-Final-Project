@@ -1,0 +1,18 @@
+*********************registeration and login**************************
+register user: done
+register admin:
+1- super admin--> this is done by postman (register in the admin controller
+this is done for the first admin giving them the permission to add/delete other admins
+by checking if this user role is "super")
+2-admin done
+
+-------------------------------------------------------------------------
+
+product 
+add product --> admin3 
+
+
+
+
+
+

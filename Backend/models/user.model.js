@@ -40,7 +40,7 @@ const userSchema = mongoose.Schema(
     },
 
     phoneNumber: {
-      type: Number,
+      type: String,
       trim: true,
       validate: (value) => {
         if (!validator.isMobilePhone(value, "ar-EG"))
@@ -81,6 +81,12 @@ const userSchema = mongoose.Schema(
       lowercase: true,
       default: "user",
       enum: ["admin", "user"],
+    },
+    adminRole: {
+      type: String,
+      enum: ["super"],
+      lowercase: true,
+      trim: true,
     },
 
     tokens: [
@@ -169,17 +175,28 @@ userSchema.methods.generateToken = async function () {
 const articleModel = require("./article.model");
 userSchema.pre("remove", async function (next) {
   await articleModel.deleteMany({ adminId: this._id });
-  // remove user comments
-
-  //remove user likes
-  next();
+  const article = await articleModel.find();
+  article.likes = article.likes.filter((l) => l.userId != this._id);
+  article.comments = article.comments.filter((c) => c.userId != this._id);
+  await article.save().next();
 });
 
 const productModel = require("./product.model");
 userSchema.pre("remove", async function (next) {
   await productModel.deleteMany({ adminId: this._id });
-  //remove user comments
-  //remove user likes
+
+  next();
+});
+const orderModel = require("./order.model");
+userSchema.pre("remove", async function (next) {
+  await orderModel.deleteMany({ userId: this._id });
+
+  next();
+});
+const cartModel = require("./cart.model");
+userSchema.pre("remove", async function (next) {
+  await cartModel.deleteMany({ userId: this._id });
+
   next();
 });
 const User = mongoose.model("User", userSchema);
