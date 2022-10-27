@@ -11,7 +11,14 @@ import { Error404Component } from './components/pages/error404/error404.componen
 import { ProductsComponent } from './components/shop/products/products.component';
 import { SingleproductComponent } from './components/shop/singleproduct/singleproduct.component';
 import { RegisterComponent } from './components/pages/register/register.component';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,13 +29,21 @@ import { RegisterComponent } from './components/pages/register/register.componen
     Error404Component,
     ProductsComponent,
     SingleproductComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    MatCardModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
