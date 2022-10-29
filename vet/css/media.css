@@ -1,0 +1,315 @@
+@media (min-width: 1200px) {
+  .about {
+    padding-bottom: 15%;
+  }
+  .service-card-two h3 {
+    margin-top: 1% !important;
+  }
+}
+
+/**********************************/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .nav-head-ul {
+    width: 40%;
+  }
+  .nav-head-contact {
+    width: 85%;
+  }
+  .slider-title {
+    font-size: 44px;
+    margin-bottom: 3%;
+    font-weight: 700;
+  }
+  .slider-paragraph {
+    margin: 0;
+    padding: 0 4%;
+  }
+
+  /*ABOUT*/
+  .about-content {
+  }
+  .abt-features {
+    width: 40%;
+    top: 7%;
+    left: 6%;
+  }
+  .abt-us-img {
+    /* margin-left: 0; */
+    width: 100%;
+    text-align: center;
+    margin-top: 4%;
+  }
+  .abt-paragraph {
+    position: static;
+    margin-top: 5%;
+  }
+  .header-title ::after,
+  .header-title ::before,
+  .test-header-title::after,
+  .test-header-title::before {
+    opacity: 0;
+    padding: 0;
+  }
+  .service-card-two h3 {
+    margin-top: 0% !important;
+    margin-bottom: 0;
+    font-size: 24px;
+  }
+
+  .team-info {
+    bottom: -180px;
+  }
+  .email-ip {
+    margin-left: 4%;
+  }
+  .blog-flx {
+    justify-content: space-around;
+  }
+  .blg-media {
+    width: 50% !important;
+    margin-top: 2%;
+  }
+}
+/****************************************************/
+@media (min-width: 768px) and (max-width: 992px) {
+  .slider-title {
+    font-size: 35px;
+    margin-bottom: 3%;
+  }
+  .slider-paragraph {
+    margin: 0;
+    padding: 0 4%;
+  }
+
+  .services-bg {
+    background-image: url(https://dazzlersoftware.com/testwp/munix-pro/wp-content/themes/munix-pro/img/service-bg.jpg);
+    /* filter: brightness(0.1); */
+    height: auto;
+    color: #ffffff;
+  }
+  .service-card-two h3 {
+    margin-top: 1% !important;
+  }
+
+  .w-media-100 {
+    width: 100% !important;
+  }
+  .email-ip {
+    margin-left: 4%;
+  }
+
+  .blog-card {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 992px) {
+  /*ABOUT*/
+  .about-content {
+    position: static;
+  }
+  .abt-features {
+    position: static;
+    width: 100%;
+  }
+  .abt-us-img {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 4%;
+  }
+  .abt-paragraph {
+    position: static;
+    margin-top: 4%;
+  }
+
+  .header-title ::after,
+  .header-title ::before,
+  .test-header-title::after,
+  .test-header-title::before {
+    opacity: 0;
+    padding: 0;
+  }
+  .client-img {
+    display: none;
+  }
+  .clients-sec {
+    height: auto;
+  }
+  .clients-body {
+    float: none;
+    margin: auto;
+    margin-bottom: 5%;
+  }
+  .pr-cards {
+    justify-content: space-around;
+  }
+  w-media-100 {
+    width: 100% !important;
+  }
+}
+/****************************************************/
+@media (min-width: 576px) and (max-width: 768px) {
+  .slider-title {
+    font-size: 35px;
+    margin-bottom: 3%;
+  }
+  .slider-paragraph {
+    display: none;
+  }
+
+  .slider-btn2 {
+    margin-left: 4%;
+  }
+
+  /*ABOUT*/
+  .about-content {
+    position: static;
+  }
+  .abt-features {
+    position: static;
+    width: 100%;
+  }
+  .abt-us-img {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 4%;
+  }
+  .abt-paragraph {
+    position: static;
+    margin-top: 4%;
+  }
+  .services-bg {
+    background-image: url(https://dazzlersoftware.com/testwp/munix-pro/wp-content/themes/munix-pro/img/service-bg.jpg);
+    /* filter: brightness(0.1); */
+    height: auto;
+    color: #ffffff;
+  }
+  .service-card-two h3 {
+    margin-top: 1% !important;
+  }
+
+  .header-title ::after,
+  .header-title ::before {
+    opacity: 0;
+    padding: 0;
+  }
+  .service-card-two h3 {
+    margin-top: 4% !important;
+  }
+  .client-img {
+    display: none;
+  }
+  .clients-sec {
+    height: auto;
+  }
+  .clients-body {
+    float: none;
+    margin: auto;
+    margin-bottom: 5%;
+  }
+
+  .pricing-btn {
+    width: 22%;
+  }
+  .team-info {
+    bottom: -196px;
+  }
+  .blog-card {
+    width: 100% !important;
+    align-self: center;
+    margin: auto;
+    margin-top: 2%;
+  }
+  .pur-btn {
+    align-self: center;
+    width: 100% !important;
+  }
+}
+
+/**************************************************/
+@media (max-width: 576px) {
+  .carousel-caption {
+    left: 5%;
+    right: 5%;
+    bottom: 30%;
+  }
+  .slider-title {
+    font-size: 30px;
+    margin-bottom: 3%;
+  }
+  .slider-paragraph {
+    display: none;
+  }
+  /*ABOUT*/
+  .about-content {
+    position: static;
+  }
+  .abt-features {
+    position: static;
+    width: 100%;
+  }
+  .abt-us-img {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 4%;
+  }
+  .abt-paragraph {
+    position: static;
+    margin-top: 4%;
+  }
+
+  .services-bg {
+    background-image: url(https://dazzlersoftware.com/testwp/munix-pro/wp-content/themes/munix-pro/img/service-bg.jpg);
+    /* filter: brightness(0.1); */
+    height: auto;
+    color: #ffffff;
+  }
+  .service-card-two h3 {
+    margin-top: 1% !important;
+  }
+
+  .header-title ::after,
+  .header-title ::before,
+  .test-header-title::after,
+  .test-header-title::before {
+    opacity: 0;
+    padding: 0;
+  }
+  .clients-sec {
+    height: auto;
+  }
+  .clients-body {
+    float: none;
+    margin: auto;
+  }
+
+  .carousel-indicators {
+    top: 28%;
+  }
+  .carousel-indicators [data-bs-target] {
+    width: 2vw !important;
+    height: 2vw !important;
+    transition: 200ms;
+    color: #ffffff;
+  }
+
+  .pricing-btn {
+    width: 20%;
+  }
+  .email-ip {
+    margin-left: 7% !important;
+  }
+  .blog-card {
+    width: 100% !important;
+  }
+  .pur-btn {
+    align-self: flex-end;
+  }
+
+  .team-info {
+    bottom: -180px;
+  }
+}
