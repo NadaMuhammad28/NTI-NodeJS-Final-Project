@@ -1,0 +1,55 @@
+<section fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="25">
+    <h2 class="login100-form-title">Sign In</h2>
+
+    <form class="" fxLayoutAlign="stretch" fxLayout="column" [formGroup]="registerForm" (ngSubmit)="handleRegister()">
+      <mat-form-field class="">
+        <mat-label class="custom-label">Name</mat-label>
+        <input matInput placeholder="Name" formControlName="name" />
+      </mat-form-field>
+      <div class="alert alert-danger my-2" *ngIf="name?.invalid && (name?.touched || name?.dirty)">
+        <li *ngIf="name?.errors?.['required']">name is required</li>
+        <li *ngIf="name?.errors?.['minlength']">name min length  3</li>
+        <li *ngIf="name?.errors?.['maxlength']">name mx length 20</li>
+      </div>
+
+
+      <mat-form-field class="">
+        <mat-label class="custom-label">Username</mat-label>
+        <input matInput placeholder="Username" formControlName="username" (input)="msg =''" />
+      </mat-form-field>
+      <div class="alert alert-danger my-2" *ngIf="msg !=''">username used before</div>
+      <div class="alert alert-danger my-2" *ngIf="username?.invalid && (username?.touched || username?.dirty)">
+        <li *ngIf="username?.errors?.['required']">username is required</li>
+      </div>
+
+
+      <mat-form-field class="">
+        <mat-label class="custom-label">Email</mat-label>
+        <input matInput placeholder="Email" formControlName="email" />
+      </mat-form-field>
+      <div class="alert alert-danger my-2" *ngIf="email?.invalid && (email?.touched || email?.dirty)">
+        <li *ngIf="email?.errors?.['required']">email is required</li>
+        <li *ngIf="email?.errors?.['email']">invalid format</li>
+      </div>
+
+      <mat-form-field class="">
+        <mat-label>Password</mat-label>
+        <input
+          class="input-custom" type="password" matInput placeholder="Password" formControlName="password"/>
+      </mat-form-field>
+      <div class="alert alert-danger my-2" *ngIf="password?.invalid && (password?.touched || password?.dirty)">
+        <li *ngIf="password?.errors?.['required']">password is required</li>
+        <li *ngIf="password?.errors?.['pattern']">invalid format</li>
+      </div>
+
+      <button class="login100-form-btn"> Create your account </button>
+    </form>
+    <span
+      ><a routerLink="/sign-in"
+        >Already have an Account
+        <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i> </a
+    ></span>
+  </mat-card>
+</section>
+
