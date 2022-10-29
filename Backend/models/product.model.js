@@ -30,15 +30,15 @@ const productSchema = mongoose.Schema(
       trim: true,
     },
 
-    images: [
-      {
-        image: {
-          type: String,
-          trim: true,
-          default: "download.png",
-        },
-      },
-    ],
+    // images: [
+    //   {
+    //     image: {
+    //       type: String,
+    //       trim: true,
+    //       default: "download.png",
+    //     },
+    //   },
+    // ],
 
     description: {
       type: String,

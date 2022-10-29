@@ -7,7 +7,7 @@ class Product {
       const product = new productModel(req.body);
       product.adminId = req.user._id;
       product.slug = slugify(req.body.name);
-      product.image = req.file.path.replace("public\\", "");
+      product.image = req.file.path.replace(`public\\images\\`, "");
       await product.save();
       resBuilder(res, true, product, "product added");
     } catch (e) {
@@ -68,7 +68,24 @@ class Product {
   static getAllProducts = async (req, res) => {
     try {
       const products = await productModel.find();
-      resBuilder(res, true, products, "products returned");
+      if (req.user) {
+        if (req.user.userType == "admin")
+          resBuilder(res, true, products, "products returned");
+      } else {
+        let pros = [];
+        products.forEach((product) => {
+          let p = {
+            _id: product._id,
+            name: product.name,
+            price: product.price,
+            slug: product.slug,
+            description: product.description,
+            image: product.image,
+          };
+          pros.push(p);
+        });
+        resBuilder(res, true, pros, "products returned");
+      }
     } catch (e) {
       resBuilder(res, false, e, e.message);
     }
