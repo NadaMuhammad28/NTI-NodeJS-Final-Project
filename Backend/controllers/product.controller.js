@@ -7,7 +7,7 @@ class Product {
       const product = new productModel(req.body);
       product.adminId = req.user._id;
       product.slug = slugify(req.body.name);
-      product.image = req.file.path.replace(`public\\images\\`, "");
+      product.image = req.file.path.replace(`public\\`, "");
       await product.save();
       resBuilder(res, true, product, "product added");
     } catch (e) {
