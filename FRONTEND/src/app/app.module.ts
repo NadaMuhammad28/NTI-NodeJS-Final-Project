@@ -23,6 +23,7 @@ import { RegisterComponent } from './components/pages/register/register.componen
 import { AuthInterceptor } from './auth.interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './components/pages/profile/profile.component';
+import { OrderComponent } from './components/shop/order/order.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,7 @@ import { ProfileComponent } from './components/pages/profile/profile.component';
     SpinnerComponent,
     CartComponent,
     ProfileComponent,
+    OrderComponent,
   ],
   imports: [
     BrowserModule,

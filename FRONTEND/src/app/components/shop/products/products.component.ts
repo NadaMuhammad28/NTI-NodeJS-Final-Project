@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { Product } from 'src/app/interfaces/product';
+import { CartService } from '../services/cart.service';
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -9,9 +12,14 @@ import { Product } from 'src/app/interfaces/product';
 export class ProductsComponent implements OnInit {
   //use interface here
   result: Product[] = [];
+  isLoaded: boolean = false;
   cartproducts: Product[] = [];
   imgURL = 'http://localhost:3000/';
-  constructor(private _data: DataService) {}
+  constructor(
+    private _data: DataService,
+    private _cartServer: CartService,
+    private _activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.getData();
@@ -24,20 +32,24 @@ export class ProductsComponent implements OnInit {
       (err) => {
         console.log(err.message);
       },
-      () => {}
+      () => {
+        this.isLoaded = true;
+      }
     );
   }
-  addToCart(p: Product) {
-    // console.log(p);
-    if ('cart' in localStorage) {
-      this.cartproducts = JSON.parse(localStorage.getItem('cart')!);
 
-      this.cartproducts.push(p);
-      localStorage.setItem('cart', JSON.stringify(this.cartproducts));
-    } else {
-      this.cartproducts.push(p);
-      localStorage.setItem('cart', JSON.stringify(this.cartproducts));
-    }
+  addToCartbtn(p: any) {
+    this._cartServer.addToCartbtn(p).subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (e) => {
+        console.log(e);
+      },
+      () => {}
+    );
+
+    console.log(p);
   }
 }
 /*

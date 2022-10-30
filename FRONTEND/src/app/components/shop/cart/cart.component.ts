@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// import {CartService} from "../../services/cart.service";
-// import {Observable} from "rxjs";
-// import {CartModelServer} from "../../models/cart.model";
+import { CartService } from '../services/cart.service';
+import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -9,13 +9,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  // cartData: CartModelServer;
   cartData: any;
-  // cartTotal: Number;
-  // subTotal: Number;
-  constructor() {}
+  isCart = false;
 
-  ngOnInit(): void {}
+  constructor(
+    private _cartServer: CartService,
+    private _activatedRoute: ActivatedRoute
+  ) {}
+
+  ngOnInit(): void {
+    this.getCartItems();
+  }
+
+  getCartItems() {
+    this._cartServer.getCartItems().subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (e) => {
+        console.log(e);
+      },
+      () => {
+        this.isCart = true;
+      }
+    );
+  }
 }
 
 //   constructor(public cartService: CartService) {

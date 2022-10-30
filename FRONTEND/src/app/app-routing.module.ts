@@ -8,6 +8,7 @@ import { SingleproductComponent } from './components/shop/singleproduct/singlepr
 import { Error404Component } from './components/pages/error404/error404.component';
 import { CartComponent } from './components/shop/cart/cart.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
+import { IsloggedGuard } from './guards/islogged.guard';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cart', component: CartComponent },
@@ -18,7 +19,7 @@ const routes: Routes = [
       { path: ':productId', component: SingleproductComponent },
     ],
   },
-  { path: 'sign-in', component: LoginComponent },
+  { path: 'sign-in', component: LoginComponent, canActivate: [IsloggedGuard] },
   { path: 'sign-up', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
   { path: '**', component: Error404Component },

@@ -1,15 +1,17 @@
+<header class="bg-dark py-5">
+  <div class="container px-4 px-lg-5 my-5">
+    <div class="text-center text-white">
+      <h1 class="display-4 fw-bolder">Shop in style</h1>
+      <p class="lead fw-normal text-white-50 mb-0">
+        With this shop hompeage template
+      </p>
+    </div>
+  </div>
+</header>
+
 <div class="container-fluid py-5">
   <div class="container">
-    <div
-      class="border-start border-5 border-primary ps-5 mb-5"
-      style="max-width: 600px"
-    >
-      <h6 class="text-primary text-uppercase">Products</h6>
-      <h1 class="display-5 text-uppercase mb-0">
-        Products For Your Best Friends
-      </h1>
-    </div>
-    <div class="row clearfix">
+    <div class="row clearfix" *ngIf="isLoaded; else notLoaded">
       <div class="pb-5 col-lg-3 col-md-4 col-sm-12" *ngFor="let pro of result">
         <div
           class="card product_item product-item position-relative bg-light d-flex flex-column text-center"
@@ -23,29 +25,33 @@
               {{ pro.name }}
             </h5>
             <ul class="product_price list-unstyled">
-              <li class="new_price">22</li>
+              <li class="new_price">{{ pro.price }} EGP</li>
             </ul>
           </div>
 
           <div
             class="btn-action d-flex justify-content-center"
-            (click)="addToCart(pro)"
+            (click)="addToCartbtn(pro._id)"
           >
             <a class="btn btn-primary py-2 px-3"
-              ><i class="bi bi-cart"></i>ADD</a
+              ><i class="bi bi-cart"></i>ADD TO CART</a
             >
-            <a class="btn btn-primary py-2 px-3" href=""
-              ><i class="bi bi-eye"></i
-            ></a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<!-- Products End -->
-<!-- <section class="container my-5">
-  <li *ngFor="let pro of result">
-    {{ pro.name }}
-  </li>
-</section> -->
+
+<ng-template #notLoaded class="loder-container">
+  <div class="lds-roller">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</ng-template>
