@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "f82a348a-4d72-491b-8b88-1d566391211b",
+		"_postman_id": "ef2ea8c3-3507-4df1-b450-328c994e9d55",
 		"name": "clinic Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "23907854"
+		"_exporter_id": "23941943"
 	},
 	"item": [
 		{
@@ -823,12 +823,85 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "single article",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "localhost:3000/api/article/singleArticle/636001cf874f6bbf1b4dad4c",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"article",
+								"singleArticle",
+								"636001cf874f6bbf1b4dad4c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/article/editImage/635557058948eb94b6c1ac19",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"article",
+								"editImage",
+								"635557058948eb94b6c1ac19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my articles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/article/myAriticles",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"article",
+								"myAriticles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit article",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/article/editArticle/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"article",
+								"editArticle",
+								""
+							]
 						}
 					},
 					"response": []
@@ -1143,7 +1216,7 @@
 							"query": [
 								{
 									"key": "",
-									"value": null,
+									"value": "",
 									"disabled": true
 								}
 							]
@@ -1178,7 +1251,7 @@
 							"query": [
 								{
 									"key": "",
-									"value": null,
+									"value": "",
 									"disabled": true
 								}
 							]
