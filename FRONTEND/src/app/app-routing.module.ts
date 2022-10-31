@@ -13,6 +13,8 @@ import { IsloggedGuard } from './guards/islogged.guard';
 import { IsauthGuard } from './guards/isauth.guard';
 import { ThankyouComponent } from './components/shop/thankyou/thankyou.component';
 import { ConfirmorderGuard } from './guards/confirmorder.guard';
+import { ArticlesComponent } from './components/blog/articles/articles.component';
+import { SingleArticleComponent } from './components/blog/single-article/single-article.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cart', component: CartComponent, canActivate: [IsauthGuard] },
@@ -21,6 +23,13 @@ const routes: Routes = [
     children: [
       { path: '', component: ProductsComponent },
       { path: ':productId', component: SingleproductComponent },
+    ],
+  },
+  {
+    path: 'articles',
+    children: [
+      { path: '', component: ArticlesComponent },
+      { path: ':articleId', component: SingleArticleComponent },
     ],
   },
   {

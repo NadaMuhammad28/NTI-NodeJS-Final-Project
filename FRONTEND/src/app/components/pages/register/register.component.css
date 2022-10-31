@@ -22,7 +22,7 @@ a:focus {
 
 a:hover {
   text-decoration: none;
-  color: #57b846;
+  color:rgba(217, 78, 35, 255)
 }
 
 .login100-form-title {
@@ -31,6 +31,7 @@ a:hover {
   color: #333333;
   line-height: 1.2;
   text-align: center;
+  font-weight: bolder;
 
   width: 100%;
   display: block;
@@ -59,7 +60,8 @@ h6 {
   width: 100%;
   height: 50px;
   border-radius: 5px;
-  background: #57b846;
+  background:rgba(217, 78, 35, 255);
+  border-color: rgba(217, 78, 35, 255);
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -76,7 +78,8 @@ h6 {
 }
 
 .login100-form-btn:hover {
-  background: #333333;
+  background: #5e5e5e;
+  border-color:#5e5e5e;
 }
 
 @media (max-width: 992px) {
@@ -117,5 +120,12 @@ h6 {
 input {
   outline: none;
   border: none;
+}
+i{
+  list-style-type: none;
+}
+
+.form-check{
+  padding-left: 30px;
 }
 

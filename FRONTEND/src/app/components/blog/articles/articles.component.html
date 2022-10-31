@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row "  *ngIf="isLoaded; else notLoaded">
+      <div class="col-md-6" *ngFor="let article of articles">
+          <div class="media blog-media">
+              <a  routerLink="/articles/{{ article._id }}"><img class="d-flex" src="{{ imgURL }}{{ article.image }}"  alt="blog image"></a>
+              <div class="media-body">
+                  <a href=""><h5 class="mt-0">{{ article.title }}</h5></a>{{ article.body}}
+                  <a routerLink="/articles/{{ article._id }}" class="post-link">Read More</a>
+                  <ul>
+                      <li>by: Admin</li>
+                      <li class="text-right"><a routerLink="">07 comments</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<ng-template #notLoaded class="loder-container">
+  <div class="lds-roller">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</ng-template>

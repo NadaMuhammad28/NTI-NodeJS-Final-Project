@@ -22,6 +22,7 @@ class Article{
             const article = await articleModel.findById(req.params.id)
             article.title = req.body.title
             article.body = req.body.body
+            article.content = req.body.content
             await article.save()
             resBuilder(res, true, article, "article edited")
         }
@@ -30,7 +31,7 @@ class Article{
         }
     } 
 
-    //edit image   ....wrong
+    //edit image   ....
     static editImage = async(req, res) =>{
         try{
             
@@ -66,7 +67,7 @@ class Article{
         }
     }
 
-    // show my articles by admin   ....wrong
+    // show my articles by admin   ....
     static myArticles = async(req,res)=>{
         try{
             const articles = await articleModel.findById(req.params.id)   // admin id
@@ -115,7 +116,7 @@ class Article{
     }
 }
 
-  // edit comment by user   .... wrong
+  // edit comment by user   .... 
   static editComment = async(req, res) =>{
     try{
         const comment = await articleModel.findById(req.params.id)   //id comment

@@ -25,6 +25,7 @@ export class RegisterComponent implements OnInit {
       Validators.required,
       Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/),
     ]),
+    phonenumber: new FormControl('', [Validators.required]),
   });
   constructor(private _auth: AuthService, private _router: Router) {}
 
@@ -41,6 +42,9 @@ export class RegisterComponent implements OnInit {
   }
   get email() {
     return this.registerForm.get('email');
+  }
+  get phonenumber() {
+    return this.registerForm.get('phonenumber');
   }
 
   handleRegister() {

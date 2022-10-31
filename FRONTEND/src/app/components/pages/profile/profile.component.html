@@ -1,1 +1,9 @@
-<p>profile works!</p>
+<section class="container my-4" *ngIf="_auth.userData">
+  <p>{{_auth.userData?.['name']}}</p>
+  <img src="http://localhost:3000/{{_auth.userData?.['profileImage']}}" height="100px" width="100px">
+  <div class="alert alert-danger my-3" *ngIf="msg!=''">{{msg}}</div>
+  <form (ngSubmit)="uploadImg()" class="my-3">
+      <input type="file" class="form-control" (change)="chngMyImg($event)">
+      <button>submit</button>
+  </form>
+</section>

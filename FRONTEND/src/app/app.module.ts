@@ -25,6 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './components/pages/profile/profile.component';
 import { OrderComponent } from './components/shop/order/order.component';
 import { ThankyouComponent } from './components/shop/thankyou/thankyou.component';
+import { ArticlesComponent } from './components/blog/articles/articles.component';
+import { SingleArticleComponent } from './components/blog/single-article/single-article.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +43,8 @@ import { ThankyouComponent } from './components/shop/thankyou/thankyou.component
     ProfileComponent,
     OrderComponent,
     ThankyouComponent,
+    ArticlesComponent,
+    SingleArticleComponent,
   ],
   imports: [
     BrowserModule,

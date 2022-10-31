@@ -1,52 +1,74 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
+
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/">Navbar</a>
+    <!-- Toggle button -->
     <button
       class="navbar-toggler"
       type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
+      aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
     </button>
+
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLinkActive="active"
-            aria-current="page"
-            routerLink="/"
-            [routerLinkActiveOptions]="{ exact: true }"
-            >Home</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLink="/products"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            >Shop</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/sign-in" routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }" *ngIf="!_auth.isLoggedin">sign In</a>
+      <a class="navbar-brand mt-2 mt-lg-0 text-light fs-1 fw-bold fst-italic px-5" routerLink="/"> Clinic </a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-5">
+        <li class="nav-item px-2">
+          <a class="nav-link text-light fs-5" routerLinkActive="active" aria-current="page" routerLink="/" [routerLinkActiveOptions]="{ exact: true}">Home</a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" *ngIf="_auth.isLoggedin" routerLink="/profile">{{this._auth.userData?.['name']}}</a>
+        <li class="nav-item px-2">
+          <a class="nav-link text-light fs-5" routerLinkActive="active" routerLink="/products" [routerLinkActiveOptions]="{ exact: true}">Shop</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="" routerLinkActive="active" (click)="logout()"
-            [routerLinkActiveOptions]="{ exact: true }" *ngIf="_auth.userData">LogOut</a>
+
+        <li class="nav-item px-2">
+          <a class="nav-link text-light fs-5" routerLinkActive="active" routerLink="/articles" [routerLinkActiveOptions]="{ exact: true}">Blog</a>
+        </li>
+
+        <li class="nav-item px-2">
+          <a class="nav-link text-light fs-5" href="#services"> Services</a>
+        </li>
+
+        <li class="nav-item px-2">
+          <a class="nav-link text-light fs-5" href="#about">About Us</a>
         </li>
 
       </ul>
+
+
     </div>
+
+
+    <div class="d-flex align-items-center pe-5">
+      <a class="link-secondary me-3 text-light fs-5" routerLink="/cart">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0 pe-5" >
+    <li class="nav-item">
+      <a class="nav-link text-light fs-5" routerLink="/sign-in" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" *ngIf="!_auth.isLoggedin">Sign In</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-light fs-5" routerLink="/sign-in" *ngIf="_auth.isLoggedin" routerLink="/profile">{{this._auth.userData?.['name']}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-light fs-5" routerLink="" routerLinkActive="active" (click)="logout()" [routerLinkActiveOptions]="{ exact: true }" *ngIf="_auth.userData">Logout</a>
+    </li>
+    </ul>
+  </div>
   </div>
 </nav>
+
+
+
+
+
+
+
+
+
+

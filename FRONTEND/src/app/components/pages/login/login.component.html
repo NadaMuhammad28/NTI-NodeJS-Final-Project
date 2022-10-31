@@ -9,7 +9,7 @@
         <mat-label class="custom-label">UserName</mat-label>
         <input matInput placeholder="Username" formControlName="username"/>
       </mat-form-field>
-      <div class="alert alert-danger my-2" *ngIf="username?.invalid &&(username?.dirty || username?.touched)">
+      <div class="alert alert-danger my-2 py-2 px-2" *ngIf="username?.invalid &&(username?.dirty || username?.touched)">
         <li *ngIf="username?.errors?.['required']">username is required</li>
         </div>
 
@@ -18,7 +18,7 @@
         <input
           class="input-custom" type="password" matInput placeholder="Password" formControlName="password"/>
       </mat-form-field>
-      <div class="alert alert-danger my-2" *ngIf="password?.invalid&&(password?.dirty || password?.touched)">
+      <div class="alert alert-danger my-2 py-2 px-2" *ngIf="password?.invalid&&(password?.dirty || password?.touched)">
         <li *ngIf="password?.errors?.['required']">password is required</li>
     </div>
 

@@ -20,6 +20,11 @@ const articleSchema = mongoose.Schema(
       required: true,
       trim: true,
     },
+    content: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     //date of the article
     createdAt: {
       type: Date,

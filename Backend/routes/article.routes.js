@@ -8,8 +8,8 @@ router.delete("/removeArticle/:id",auth,authAdmin,Article.removeArticle)  // rem
 router.post("/editArticle/:id", auth, authAdmin ,Article.editArticle);   // edit article by admin
 router.post("/editImage/:id", auth, authAdmin ,Article.editImage);   // edit image by admin
 
-router.get("/singleArticle/:id", auth,Article.singleArticle)  // show single article
-router.get("/allAriticles", auth,Article.allArticles ) // show all articles
+router.get("/singleArticle/:id",Article.singleArticle)  // show single article
+router.get("/allAriticles",Article.allArticles ) // show all articles
 router.get("/myAriticles/:id", auth, authAdmin, Article.myArticles) // show my articles
 router.get("/allComments/:id", auth,Article.allComments)  // show all comments
 
