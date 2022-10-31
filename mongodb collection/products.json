@@ -1,0 +1,95 @@
+[{
+  "_id": {
+    "$oid": "635b7556a250a9032002cdee"
+  },
+  "name": "Silver Dry Dog Food ( +5 Months ) 1 Kg",
+  "price": 45,
+  "description": "High-quality animal proteins (poultry and fish) to support body and muscle growth.\nContains a high percentage of antioxidants (vitamins C and E, beta-carotene, and selenium) to protect the cells from oxidation.",
+  "images": [],
+  "adminId": {
+    "$oid": "6359c206256284b2f2623d15"
+  },
+  "slug": "silver-dry-dog-food-(-+5-months-)-1-kg",
+  "image": "images\\1666938198829.jpg",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1666938198937"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1666938198937"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "635b7636a250a9032002ce00"
+  },
+  "name": "Silver Adult Cat Dry Food 1 Kg",
+  "price": 50,
+  "description": "Chicken & Rice & Vegetable Flavour.\nBalanced formula for the ultimate care of adult cats.\nHigh-quality animal proteins (poultry and fish) to support body and muscle growth.",
+  "images": [],
+  "adminId": {
+    "$oid": "6359c206256284b2f2623d15"
+  },
+  "slug": "silver-adult-cat-dry-food-1-kg",
+  "image": "images\\1666938422197.jpg",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1666938422201"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1666938422201"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "635bc0a6861ec582adb5c113"
+  },
+  "name": "Silver Adult Dog Dry Food 20 Kg",
+  "price": 650,
+  "description": "Chicken & Rice & Vegetable Flavour.\nBalanced formula for the ultimate care of adult cats.\nHigh-quality animal proteins (poultry and fish) to support body and muscle growth.",
+  "adminId": {
+    "$oid": "6359c206256284b2f2623d15"
+  },
+  "slug": "silver-adult-cat-dry-food-20-k",
+  "image": "images\\1666957478379.png",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1666957478396"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1666957478396"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "635dc3e9b5b76050100d4bd5"
+  },
+  "name": "Silver Adult Cat Dry Food 20 Kg",
+  "price": 650,
+  "description": "Chicken & Rice & Vegetable Flavour.\nBalanced formula for the ultimate care of adult cats.\nHigh-quality animal proteins (poultry and fish) to support body and muscle growth.",
+  "adminId": {
+    "$oid": "6359c206256284b2f2623d15"
+  },
+  "slug": "silver-adult-cat-dry-food-20-kg",
+  "image": "images\\1667089385155.png",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1667089385185"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1667089385185"
+    }
+  },
+  "__v": 0
+}]
