@@ -8,10 +8,14 @@ import { SingleproductComponent } from './components/shop/singleproduct/singlepr
 import { Error404Component } from './components/pages/error404/error404.component';
 import { CartComponent } from './components/shop/cart/cart.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
+import { OrderComponent } from './components/shop/order/order.component';
 import { IsloggedGuard } from './guards/islogged.guard';
+import { IsauthGuard } from './guards/isauth.guard';
+import { ThankyouComponent } from './components/shop/thankyou/thankyou.component';
+import { ConfirmorderGuard } from './guards/confirmorder.guard';
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'cart', component: CartComponent },
+  { path: 'cart', component: CartComponent, canActivate: [IsauthGuard] },
   {
     path: 'products',
     children: [
@@ -19,10 +23,14 @@ const routes: Routes = [
       { path: ':productId', component: SingleproductComponent },
     ],
   },
+  {
+    path: 'check-out',
+    component: OrderComponent,
+  },
   { path: 'sign-in', component: LoginComponent, canActivate: [IsloggedGuard] },
   { path: 'sign-up', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: '**', component: Error404Component },
+  { path: 'order-confirmation', component: ThankyouComponent },
   { path: '**', component: Error404Component },
 ];
 

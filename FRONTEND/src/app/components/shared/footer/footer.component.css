@@ -1,0 +1,262 @@
+footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  text-align: left;
+}
+.footer-title {
+  margin-bottom: 7%;
+  position: relative;
+  font-weight: 600;
+  display: block;
+  font-size: 30px;
+  color: #bbdc56;
+}
+/*.footer-title::after {
+  content: "";
+  padding: 0;
+  bottom: -118%;
+
+  position: absolute;
+  padding-top: 0.5%;
+  white-space: pre;
+  display: block;
+  background-color: #0c65ed;
+  width: 15%;
+  margin-bottom: 7%;
+  text-align: left;
+}*/
+
+.footer-posts-card {
+  list-style: none;
+  flex-direction: column;
+  width: 80%;
+}
+/*contact-info*/
+.contact-info-body {
+  list-style: none;
+}
+
+.contact-info-body i {
+  color: #bbdc56;
+}
+/*POSTS*/
+.footer-post-content {
+  justify-content: space-between;
+  padding: 4% 0;
+}
+.footer-img-anchor {
+  object-fit: cover;
+  width: 20%;
+  height: 60px;
+}
+.footer-post-body {
+  padding-left: 4%;
+  padding-right: 5%;
+  vertical-align: middle;
+  color: #c6c6c6;
+  font-size: 13px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+.footer-post-img {
+  width: 100%;
+  height: inherit;
+}
+.footer-post-img:hover {
+  filter: brightness(0.8);
+}
+.footer-post-title {
+  font-size: 14px;
+  font-family: "Josefin Sans", sans-serif;
+  color: #fff;
+  text-decoration: none;
+  transition: all ease 0.3s;
+}
+
+.footer-post-content:first-child {
+  border-bottom: 2px solid #464646;
+}
+.footer-post-title:hover {
+  color: #bababa;
+  transition: all ease 0.3s;
+}
+/************POPULAR**********/
+.footer-btn {
+  color: #000;
+  font-size: 14px !important;
+  background-color: #f9f9f9;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 15px;
+  margin: 3% 0;
+  margin-right: 5%;
+  padding: 1.5% 2.75%;
+}
+.footer-btn:hover {
+  transition: all 0.3s ease;
+  background-color: #0c65ed;
+  color: #fff;
+}
+/*************/
+.footer-cpyright {
+  box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.5);
+  background-color: #1a1a1a;
+  color: #bbdc56;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 2% 0;
+}
+.footer-cpyright a {
+  cursor: pointer;
+}
+footer ul {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+.contactpg {
+  background-image: url(http://dazzlersoftware.com/testwp/munix-pro/wp-content/themes/munix-pro/img/abt-ban.jpg);
+  background-repeat: no-repeat;
+}
+.contactpg h2 {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 600;
+  text-transform: capitalize;
+  vertical-align: middle;
+}
+.title-p {
+  padding-top: 10%;
+}
+
+.con-sec {
+  padding: 4% 0;
+}
+.sec-title {
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #1a1a1a;
+  margin-bottom: 7%;
+}
+
+.contact-icon {
+  color: #0c65ed;
+}
+.con-body h4 {
+  font-size: 18px;
+}
+
+.con-body p {
+  font-size: 14px;
+  line-height: 25px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  color: #666666;
+}
+form div {
+  position: relative;
+}
+
+form i {
+  position: absolute;
+  padding: 0.8rem 0 0.8rem 0.3rem;
+}
+
+.oline {
+  outline: none !important;
+  padding: 2% 6%;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #000;
+}
+
+.form-btn {
+  border-radius: 50px;
+  padding: 1% 5%;
+
+  background-color: #0c65ed;
+  color: #fff;
+  font-size: 18px;
+  margin-top: 4%;
+}
+/******************/
+/*purchase*/
+.pur-sec {
+  background-color: #0c65ed;
+  color: #fff;
+}
+
+.pur-btn {
+  background-color: #fff;
+  color: #0c65ed;
+  border-radius: 50px;
+  padding: 3% 8%;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  border: 0;
+}
+/**********************/
+/*to the top of the page*/
+.arrow-home {
+  position: fixed;
+  font-size: 45px;
+  color: rgba(217, 78, 35, 255);
+  font-weight: bold;
+  right: 4%;
+  top: 85%;
+  z-index: 2;
+  /* box-shadow: 2px 2px 2px #232323; */
+}
+
+.b-home,
+.b-home:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.sub-icon {
+  font-size: 7rem;
+  opacity: 0.4;
+  transform: translateY(10%);
+  /* transform: rotate(-40deg); */
+  left: 19%;
+}
+.custome-rotate {
+  transform: rotate(-40deg);
+}
+.subs-title-fotter {
+  font-size: 18px;
+  font-family: "Ubuntu", sans-serif;
+  margin-bottom: 2%;
+  font-weight: 700;
+  color: #ffffff;
+}
+.contact-email {
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px #959595;
+  margin-top: 4%;
+  padding: 2%;
+  padding-left: 1%;
+  position: relative;
+  width: 100%;
+  outline: #ffffff;
+  color: #8d8d8d;
+}
+form {
+  position: relative;
+}
+.arrow-email {
+  font-size: 14px;
+  color: #f3c2c2;
+  position: absolute;
+  right: 6%;
+  top: 38%;
+}
+.arrow-email:visited {
+  color: #8d8d8d;
+}

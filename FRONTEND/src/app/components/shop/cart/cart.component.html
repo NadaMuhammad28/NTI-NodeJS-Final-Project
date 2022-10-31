@@ -1,82 +1,112 @@
-<div class="container">
-  <ng-template class="text-center my-5" #empty>
-    <h4>Your Cart Is Empty</h4>
-    <button class="btn btn-primary btn-lg mt-3" routerLink="/products">
-      GO TO SHOP
-    </button>
+<div class="cart-height">
+  <ng-template class="text-center" #empty>
+    <div class="empty-Cart">
+      <h4>Your Cart Is Empty</h4>
+      <button class="btn btn-lg mt-3" routerLink="/products">GO TO SHOP</button>
+    </div>
   </ng-template>
 
-  <ng-container>
-    <div class="row" *ngIf="isCart; else empty">
-      <div class="col my-4">
-        <table class="table">
-          <thead class="table-dark">
-            <tr class="text-center">
-              <th>Image</th>
-              <th>Title</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Subtotal</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let c of cartData.data; let i = index">
-              <td class="d-flex align-items-center justify-content-around">
-                <img [src]="" alt="" height="60" class="order-1" />
-                <span class="text-danger" style="cursor: pointer"
-                  ><i class="fa fa-trash"></i
-                ></span>
-              </td>
-              <td>
-                <p>name</p>
-              </td>
-              <td>
-                <p></p>
-              </td>
-              <td>
-                <form>
-                  <div class="value-button" id="decrease">
-                    <i class="fa fa-minus"></i>
-                  </div>
-                  <input
-                    type="number"
-                    id="number"
-                    [value]=""
-                    readonly
-                    [max]=""
+  <div class="container">
+    <!--  -->
+    <ng-container>
+      <div class="row" *ngIf="isCart; else empty">
+        <div class="col my-4">
+          <button (click)="emptyCart()" class="btn btn-danger btn-sm order-0">
+            EMPTY CART
+          </button>
+          <table class="table">
+            <thead class="table-dark">
+              <tr class="text-center">
+                <th></th>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let pro of products">
+                <td class="text-center">
+                  <button class="deletebtn" (click)="deleteProduct(pro._id)">
+                    Delete Item
+                    <i class="fa-solid fa-trash-can text-danger"></i>
+                  </button>
+                </td>
+                <td class="d-flex align-items-center justify-content-around">
+                  <img
+                    src="{{ imgURL }}{{ pro.image }}"
+                    alt=""
+                    height="60"
+                    class="order-1"
                   />
-                  <div class="value-button" id="increase">
-                    <i class="fa fa-plus"></i>
-                  </div>
-                </form>
-              </td>
-              <td>
-                <p>total price</p>
-              </td>
-            </tr>
-            <tr class="border-0">
-              <td style="border: none"></td>
-              <td></td>
-              <td></td>
-              <td>TOTAL</td>
-              <td>total</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+                  <span class="text-danger" style="cursor: pointer"
+                    ><i class="fa fa-trash"></i
+                  ></span>
+                </td>
+                <td>
+                  <p class="text-center m-0">{{ pro.name }}</p>
+                </td>
+                <td>
+                  <p class="text-center m-0">{{ pro.price }} EGP</p>
+                </td>
+                <td>
+                  <form>
+                    <!-- <div class="value-button" id="decrease"></div> -->
+                    <input
+                      type="number"
+                      id="number"
+                      [value]="pro.quantity"
+                      readonly
+                      [max]=""
+                    />
+                    <!-- <div class="value-button" id="increase"></div> -->
+                  </form>
+                </td>
+                <td>
+                  <p>{{ pro.quantity * pro.price }} EGP</p>
+                </td>
+              </tr>
+              <tr class="border-0">
+                <td style="border: none"></td>
+                <td style="border: none"></td>
+                <td style="border: none"></td>
+                <td style="border: none"></td>
 
-      <div class="col-md-12 d-flex mb-5">
-        <div
-          class="d-flex w-100 justify-content-between flex-sm-column flex-md-row"
-        >
-          <a routerLink="/checkout" class="btn btn-danger btn-sm order-1"
-            >Checkout</a
+                <td>{{ totalAmount }}</td>
+                <td>{{ totalPrice }} EGP</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-12 d-flex mb-5">
+          <div
+            class="d-flex w-100 justify-content-between flex-sm-column flex-md-row"
           >
-          <a routerLink="/products" class="btn btn-success btn-sm order-0"
-            >Continue Shopping</a
-          >
+            <a
+              routerLink="/check-out"
+              (click)="navigatetoorder()"
+              class="btn btn-danger btn-sm order-1"
+              >Checkout</a
+            >
+            <a routerLink="/products" class="btn btn-success btn-sm order-0"
+              >Continue Shopping</a
+            >
+          </div>
         </div>
       </div>
-    </div>
-  </ng-container>
+    </ng-container>
+  </div>
 </div>
+<ng-template #notLoaded class="loder-container">
+  <div class="lds-roller">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</ng-template>

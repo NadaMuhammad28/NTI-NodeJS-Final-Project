@@ -1,1 +1,117 @@
-<p>order works!</p>
+<!-- <div class="section" *ngIf="cartData.total > 0"> -->
+<div class="section">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row order-container">
+      <div class="col-md-7 billing-details">
+        <!-- Billing Details -->
+        <div class="billing-details">
+          <div class="section-title">
+            <h3 class="title text-center mb-5">SHIPPING DETAILS</h3>
+          </div>
+          <form class="row" [formGroup]="orderForm" (ngSubmit)="handleOrder()">
+            <!-- phone -->
+            <mat-label class="custom-label col-7">Phone Number *</mat-label>
+
+            <mat-form-field class="">
+              <input matInput formControlName="phone" />
+            </mat-form-field>
+            <div
+              class="text-danger my-2"
+              *ngIf="phone?.invalid && (phone?.touched || phone?.dirty)"
+            >
+              <li class="list-unstyled" *ngIf="phone?.errors?.['required']">
+                phone Number is required
+              </li>
+            </div>
+            <!-- gov -->
+            <mat-label class="custom-label">Governate *</mat-label>
+
+            <mat-form-field class="">
+              <input matInput formControlName="governate" />
+            </mat-form-field>
+            <div
+              class="text-danger my-2"
+              *ngIf="
+                governate?.invalid && (governate?.touched || governate?.dirty)
+              "
+            >
+              <li class="list-unstyled" *ngIf="governate?.errors?.['required']">
+                Governate Name is required
+              </li>
+            </div>
+            <!-- addr -->
+            <mat-label class="custom-label">Address *</mat-label>
+
+            <mat-form-field class="">
+              <input matInput formControlName="address" />
+            </mat-form-field>
+            <div
+              class="text-danger my-2"
+              *ngIf="address?.invalid && (address?.touched || address?.dirty)"
+            >
+              <li class="list-unstyled" *ngIf="address?.errors?.['required']">
+                Address is required
+              </li>
+            </div>
+            <!-- floorNumber -->
+            <mat-label class="custom-label">floor Number *</mat-label>
+
+            <mat-form-field class="">
+              <input type="number" matInput formControlName="floorNumber" />
+            </mat-form-field>
+            <div
+              class="text-danger my-2"
+              *ngIf="
+                floorNumber?.invalid &&
+                (floorNumber?.touched || floorNumber?.dirty)
+              "
+            >
+              <li
+                class="list-unstyled"
+                *ngIf="floorNumber?.errors?.['required']"
+              >
+                floor Number is required
+              </li>
+            </div>
+            <!-- flatNumber -->
+            <mat-label class="custom-label">flat Number *</mat-label>
+
+            <mat-form-field class="">
+              <input type="number" matInput formControlName="flatNumber" />
+            </mat-form-field>
+            <div
+              class="text-danger my-2"
+              *ngIf="
+                flatNumber?.invalid &&
+                (flatNumber?.touched || flatNumber?.dirty)
+              "
+            >
+              <li
+                class="list-unstyled"
+                *ngIf="flatNumber?.errors?.['required']"
+              >
+                flat Number is required
+              </li>
+            </div>
+            <button
+              type="submit"
+              class="btn-outline-danger btn-sm my-2 btn-block login100-form-btn"
+              [disabled]
+            >
+              Place order
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- /Billing Details -->
+
+      <!-- /row -->
+
+      <!-- /container -->
+
+      <!-- /SECTION -->
+    </div>
+  </div>
+</div>

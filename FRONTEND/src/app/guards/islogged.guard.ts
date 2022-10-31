@@ -20,8 +20,9 @@ export class IsloggedGuard implements CanActivate {
   ): boolean {
     console.log('test');
 
-    if (this._auth.isLoggedin) {
-      alert('you are logged in');
+    if (localStorage.getItem('token')) {
+      // alert('you are logged in');
+      this._router.navigateByUrl('/');
       return false;
     }
     return true;

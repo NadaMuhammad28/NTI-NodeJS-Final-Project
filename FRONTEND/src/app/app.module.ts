@@ -24,6 +24,7 @@ import { AuthInterceptor } from './auth.interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './components/pages/profile/profile.component';
 import { OrderComponent } from './components/shop/order/order.component';
+import { ThankyouComponent } from './components/shop/thankyou/thankyou.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,7 @@ import { OrderComponent } from './components/shop/order/order.component';
     CartComponent,
     ProfileComponent,
     OrderComponent,
+    ThankyouComponent,
   ],
   imports: [
     BrowserModule,

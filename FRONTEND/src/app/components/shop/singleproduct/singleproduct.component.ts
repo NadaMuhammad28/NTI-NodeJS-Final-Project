@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CartService } from '../services/cart.service';
 
 import { DataService } from '../services/data.service';
 @Component({
@@ -9,12 +11,15 @@ import { DataService } from '../services/data.service';
 })
 export class SingleproductComponent implements OnInit {
   productId: any;
+  isLoaded: boolean = false;
   result: any = {};
   imgURL = 'http://localhost:3000/';
 
   constructor(
     private _activatedRoute: ActivatedRoute,
-    private _data: DataService
+    private _data: DataService,
+    private _cartServer: CartService,
+    private _router: Router
   ) {
     // this.productId = this._activatedRoute.snapshot.paramMap.get('productId');
     this.productId = this._activatedRoute.snapshot.params['productId'];
@@ -32,7 +37,31 @@ export class SingleproductComponent implements OnInit {
       (err) => {
         console.log(err);
       },
-      () => {}
+      () => {
+        this.isLoaded = true;
+      }
     );
+  }
+
+  getQuantity(quantity: any) {
+    return quantity;
+  }
+
+  addToCart(p: any, q: any) {
+    // quantity = this.getQuantity;
+
+    this._cartServer.addToCart(p, q).subscribe(
+      (res) => {},
+      (e) => {
+        console.log(e);
+      },
+      () => {
+        this._router.navigate(['cart']).then(() => {
+          window.location.reload();
+        });
+      }
+    );
+
+    console.log(p);
   }
 }

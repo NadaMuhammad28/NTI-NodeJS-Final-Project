@@ -1,0 +1,35 @@
+<div class="ty-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="jumbotron text-center">
+          <h1 class="display-3">Thank You!</h1>
+          <p class="lead">
+            <strong>We Will Contact you soon</strong> for order confirmation.
+          </p>
+          <hr />
+          <p></p>
+
+          <p>
+            Order Id : <strong> {{ orderID }} </strong>
+          </p>
+        </div>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Price</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-0">
+              <td style="border: none">{{ price }}</td>
+              <td style="border: none">{{ quantity }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

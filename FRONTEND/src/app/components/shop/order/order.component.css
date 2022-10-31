@@ -1,0 +1,12 @@
+.order-container {
+  padding: 7%;
+  justify-content: space-between;
+}
+.billing-details {
+  margin: auto;
+}
+mat-form-field {
+  border: 1px solid #212121;
+  border-radius: 5px;
+  margin-bottom: 2%;
+}
