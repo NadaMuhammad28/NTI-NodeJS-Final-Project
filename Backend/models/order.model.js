@@ -14,7 +14,7 @@ const orderSchema = mongoose.Schema(
       lowercase: true,
       enum: ["cancelled", "delivered", "shipped", "processing"],
     },
-    phoneNumber: {
+    phone: {
       type: String,
       trim: true,
       required: true,
@@ -23,34 +23,30 @@ const orderSchema = mongoose.Schema(
           throw new Error("invalid phone Number");
       },
     },
+    governate: {
+      type: String,
+      trim: true,
+      required: true,
+    },
+
+    flatNumber: {
+      type: Number,
+      trim: true,
+      required: true,
+    },
+    floorNumber: {
+      type: Number,
+      trim: true,
+      required: true,
+    },
 
     orderItems: [],
-    /* orderItems: [
-      {
-        productId: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "Product",
-          required: true,
-        },
-        quantity: { type: Number, default: 1, required: true },
-        //price: { type: Number, required: true }
-      },
-    ], */
 
-    addresses: [
-      {
-        addrType: {
-          type: String,
-          trim: true,
-          required: true,
-        },
-        addrDetails: {
-          type: String,
-          trim: true,
-          required: true,
-        },
-      },
-    ],
+    address: {
+      type: String,
+      trim: true,
+      required: true,
+    },
   },
   {
     timestamps: true,

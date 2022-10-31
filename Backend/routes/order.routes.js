@@ -11,5 +11,5 @@ router.get("/getAllOrders", auth, authUser, Order.getUSerAllOrders);
 router.delete("/deleteOrder/:id", auth, authUser, Order.deleteOrder);
 ///////////////ADMIN//////////////////////////////
 router.get("/allOrders", auth, authAdmin, Order.getALLOrders);
-
+router.post("/updateStatus/:id", auth, authAdmin, Order.updateOrder);
 module.exports = router;

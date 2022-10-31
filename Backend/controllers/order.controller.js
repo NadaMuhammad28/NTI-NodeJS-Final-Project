@@ -76,38 +76,20 @@ class Order {
     }
   };
 
-  /*
-// update status by admin
-static changeStatus = async (req, res) => {
+  static updateOrder = async (req, res) => {
     try {
-      if (req.header("status") == "shipped") {
-        if (req.user.status) throw new Error("already shipped");
-        req.user.status = true;
-        await req.user.save();
-      } else if (req.header("status") == "delievered") {
-        if (!req.user.status) throw new Error("already delievered");
-        req.user.status = false;
-        await req.user.save();
-      } else throw new Error("invalid status");
-      resBuilder(res, true, req.user, "changed");
+      const order = await orderModel.findOne({ _id: req.params.id });
+      const allowedEdits = ["status"];
+      const keys = Object.keys(req.body);
+      const isValid = keys.every((el) => allowedEdits.includes(el));
+      if (!isValid) throw new Error("invaild edit keys");
+      keys.forEach((k) => (order[k] = req.body[k]));
+
+      await order.save();
+      resBuilder(res, true, order, "order data is fetched");
     } catch (e) {
       resBuilder(res, false, e, e.message);
     }
   };
-
-  // get status
-  static getOrderStatus = async(req,res) =>{
-    try{
-        
-    }
-    catch(e){
-        resBuilder(res, false, e, e.message)
-    }
-    
-}
-*/
-  // get all orders
-
-  // get my orders
 }
 module.exports = Order;
