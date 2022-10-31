@@ -1,0 +1,1418 @@
+{
+	"info": {
+		"_postman_id": "f82a348a-4d72-491b-8b88-1d566391211b",
+		"name": "clinic Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23907854"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"user3\",\r\n    \"username\": \"nnh\",\r\n    \"email\":\"nadamuhammad28@gmail.com\",\r\n     \"phoneNumber\":\"+201018310998\",\r\n     \"gender\"  :\"female\",\r\n    \"password\": \"12345\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"username\": \"nnh\",\r\n       \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzUxYjdiMzE0YzE1MGFiYzMyYjI2NjMiLCJpYXQiOjE2NjYzMDEwMDZ9.gG_gsExnKLQFIHWFcJ55XkERs_PTKxD7zBte-XmfnCw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"logout"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user logOutAll",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzUyNTEyYTM4NDZlODRjMTk2Y2NkMmIiLCJpYXQiOjE2NjYzNDcyNzd9.ZSqL-xXguLsC9IxRPHWtIzmYTyXhSJzY3y3FlyMaAL4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/user/logOutAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"logOutAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzUyNTEyYTM4NDZlODRjMTk2Y2NkMmIiLCJpYXQiOjE2NjYzMzk4NTR9.DkRp2OsSCuxzeaPlOduXY_gqJmUtJIOinUO_z_Fe7l0",
+								"type": "text"
+							},
+							{
+								"key": "status",
+								"value": "activate",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/user/changeStatus",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"changeStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzUyNTEyYTM4NDZlODRjMTk2Y2NkMmIiLCJpYXQiOjE2NjYzNTYwNzF9.yFc3Xd8DLTMvFpkCbXAh6mWepnqkaJ3jm_6aFqOnMUQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"salma\", \"email\":\"salma@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/editUser",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"editUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add profile image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/D:/NTI level2/pull project/NTI-NodeJS-Final-Project/Backend/public/download.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/uploadImage",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"uploadImage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU1NTUzZDg5NDhlYjk0YjZjMWFiZTkiLCJpYXQiOjE2NjY1MzY5MjB9.Df37H6-BWZD0qZcZ1WZYjqeXUNjJuwsKmJKzOh8gGcA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/user/deleteUser/63555d03ab3476571accd2b8",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"deleteUser",
+								"63555d03ab3476571accd2b8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete all",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "showAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU1NjAxMTY1ZDdhMTljNDllYjRkODAiLCJpYXQiOjE2NjY1Mzk2MDZ9.HS8qBi_YgyRSJ15TGx0NzLyp269gUlboac0jU8T2Pho",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/user/showAllUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"showAllUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show single user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "register admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"Admin\",\r\n     \"username\": \"usernameforadmin\",\r\n    \"password\": \"passwordforadmin\",\r\n    \"userType\": \"admin\",\r\n    \"gender\":\"female\",\r\n    \"adminRole\": \"super\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admin/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SUPER admin login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"usernameforadmin\",\r\n    \"password\": \"passwordforadmin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"usernameforadmin\",\r\n    \"password\": \"passwordforadmin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzUxYjdkMjE0YzE1MGFiYzMyYjI2NjgiLCJpYXQiOjE2NjYzMDA3NDJ9.dTzwRz-jpSsvS0mu3jjNxD8Er9GhT_ZbQC8G9BS0x30",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admin/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"logout"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin logOutAll",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzUxYjdkMjE0YzE1MGFiYzMyYjI2NjgiLCJpYXQiOjE2NjYzMDA4NTV9.45rwh6fJbv_JkAefAaDSHnz8XGDIjEJoepQwYzNd8hE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/admin/logOutAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"logOutAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU5YzIwNjI1NjI4NGIyZjI2MjNkMTUiLCJpYXQiOjE2NjY4MjY4MDJ9.cGKF3XE4N9lU2KJcVabRlWsETP7FKoQnNne1_kwC6NQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Admin3\",\r\n     \"username\": \"usernameforadmin3\",\r\n    \"password\": \"passwordforadmin3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admin/addAdmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"addAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin showAllAdmins",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzUxYjdkMjE0YzE1MGFiYzMyYjI2NjgiLCJpYXQiOjE2NjYzMDcxOTB9.xqDiN69QSmm7jNxinL9T_R2Uz-I96NzuwIIJDIe2nZg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/admin/showAllUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"showAllUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REMOVE ADMIN",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU5YzIwNjI1NjI4NGIyZjI2MjNkMTUiLCJpYXQiOjE2NjY4MzU1OTN9.ejtXboSZh6MQyMFyMetZPrj4YTV4qkYxpsQfDDo6mBg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/admin/removeAdmin/6359ea39a61c2271a1b3dfbf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"removeAdmin",
+								"6359ea39a61c2271a1b3dfbf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REMOVE ADMIN WITHOUT REMOVING WHAT THEY ADDED IN ANY MODEL",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU5YzIwNjI1NjI4NGIyZjI2MjNkMTUiLCJpYXQiOjE2NjY4NDA2NzJ9.UnqxfDOAwAawfWS2nsEN5tbJHUq3q1SgG0QLgpaiexw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/admin/removeAdminOnly/6359eac9a61c2271a1b3dfd3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"removeAdminOnly",
+								"6359eac9a61c2271a1b3dfd3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "article",
+			"item": [
+				{
+					"name": "Add article",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzUyNTBlZTM4NDZlODRjMTk2Y2NkMjciLCJpYXQiOjE2NjYzODE0NjN9.2GtuY4haR1hlQ14ZJSmMi36fOsTM7Dl6bxRHAPkDKJw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "cat",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "jajaj ndjdj jdjd kdkd",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Salma-PC/Desktop/images (1).jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/article/addArticle",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"article",
+								"addArticle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzUzYjYwNmFiZWNiNmY1NGJhMjZhYmUiLCJpYXQiOjE2NjY0MzA0ODN9._HxphhJjcs6wr9mfnw1OWsp9hXvGk7WAYs6L9PToxFs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"commentBody\":\"salmnj jhjjj\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/article/addComment/6353a19bc85fc00ef4889752",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"article",
+								"addComment",
+								"6353a19bc85fc00ef4889752"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dalete comment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete article",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzUzYjYwNmFiZWNiNmY1NGJhMjZhYmUiLCJpYXQiOjE2NjY0MzA0ODN9._HxphhJjcs6wr9mfnw1OWsp9hXvGk7WAYs6L9PToxFs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/article/removeArticle/635408662a928974f2f876f4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"article",
+								"removeArticle",
+								"635408662a928974f2f876f4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all articles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/article//allAriticles",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"article",
+								"",
+								"allAriticles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add like",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/article/like/63540a20ae22d5759776a953",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"article",
+								"like",
+								"63540a20ae22d5759776a953"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unlike",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzUyZWMzMWI1NDk4NDVmZDYwMDY0N2YiLCJpYXQiOjE2NjY0NzkzNDh9.T0DufP8j8vkWXEBWOGVSfwX4hRcJUbdnr8nySuf1_gE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/article/unlike/6354744e306edb676ea3703e",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"article",
+								"unlike",
+								"6354744e306edb676ea3703e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit article",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "REMOVE THE WHOLE PRODUCT",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzUzNzQ3NTIyNTIwM2M2ZDBjYmNiNWEiLCJpYXQiOjE2NjY0MTM3MDB9.gGsgfFmHDksfRDCxvIZXPoxLeCh8JjIGE9GBeCkoJbM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/cart/removeProduct/pig dy food",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart",
+								"removeProduct",
+								"pig dy food"
+							],
+							"query": [
+								{
+									"key": "Author",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzUzNzQ3NTIyNTIwM2M2ZDBjYmNiNWEiLCJpYXQiOjE2NjY0MTM3MDB9.gGsgfFmHDksfRDCxvIZXPoxLeCh8JjIGE9GBeCkoJbM",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET CART ITEMS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzVhMDFlYTc4NTg3NTA1YzVlYzgzYmUiLCJpYXQiOjE2NjY4NDMxMjd9.ejtU3OdP4MboeqxMWPQRULdQrBu6SPbhr6fyQuxkRZY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/cart/getCartItems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart",
+								"getCartItems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EMPTY CART",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzUzNzQ3NTIyNTIwM2M2ZDBjYmNiNWEiLCJpYXQiOjE2NjY0MTM3MDB9.gGsgfFmHDksfRDCxvIZXPoxLeCh8JjIGE9GBeCkoJbM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/cart/emptyCart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart",
+								"emptyCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD TO CART",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzVhMzNiZGM2NTk0NTQ5ZmQyMDkwMGIiLCJpYXQiOjE2NjY4NTU4OTN9.KjkytzikhIUDMn32VTfVC2RD8rV9kQW7WVf7tEC2xuU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\":8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cart/addToCart/635a341cc6594549fd20901f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart",
+								"addToCart",
+								"635a341cc6594549fd20901f"
+							],
+							"query": [
+								{
+									"key": "author",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzUzNzQ3NTIyNTIwM2M2ZDBjYmNiNWEiLCJpYXQiOjE2NjY0MTM3MDB9.gGsgfFmHDksfRDCxvIZXPoxLeCh8JjIGE9GBeCkoJbM",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL CARTS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU5YzIwNjI1NjI4NGIyZjI2MjNkMTUiLCJpYXQiOjE2NjY4NTU3NzJ9.Zot4Y8VU8WOr0Z7G5YSEhxpS1VKh3eY-8xaF76rbGEA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/cart/showAllCarts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart",
+								"showAllCarts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product Copy",
+			"item": [
+				{
+					"name": "CREATE PRODUCT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU5YzIwNjI1NjI4NGIyZjI2MjNkMTUiLCJpYXQiOjE2NjY4NDA2NzJ9.UnqxfDOAwAawfWS2nsEN5tbJHUq3q1SgG0QLgpaiexw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Silver Adult Cat Dry Food 20 Kg",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "650.00",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Chicken & Rice & Vegetable Flavour.\nBalanced formula for the ultimate care of adult cats.\nHigh-quality animal proteins (poultry and fish) to support body and muscle growth.",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/hp/Desktop/NTI-NodeJS-Final-Project/shopImgs-temp/[8456] Silver Adult Cat Dry Food 20 Kg.png"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/createProduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"createProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DElETE PRODUCT BY ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU5YzIwNjI1NjI4NGIyZjI2MjNkMTUiLCJpYXQiOjE2NjY4NDE2NjB9.fV6lM1AD1Wal4AGrwu8IY7N0u08amMb-N9OEcGRc2-I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/product/deleteProduct/6359ec17a61c2271a1b3dfdb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"deleteProduct",
+								"6359ec17a61c2271a1b3dfdb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE ALL PRODUCTS",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzUxYjdkMjE0YzE1MGFiYzMyYjI2NjgiLCJpYXQiOjE2NjYzOTU0OTB9.Zy5Rgw8UC7SXUeWSzyk0NCGOX6VwyDAHI0Zr1gfs3yg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/product/deleteAllProducts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"deleteAllProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET PRODUCT BY ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/product/getProduct/635b7556a250a9032002cdee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"getProduct",
+								"635b7556a250a9032002cdee"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET PRODUCT BY SLUG",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzUxYjdkMjE0YzE1MGFiYzMyYjI2NjgiLCJpYXQiOjE2NjYzOTY1ODd9._1US3GZRniEArmIac2aEn0ogACxKiCwo4vM_vjDAVLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/product/getProductBySlug/wig",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"getProductBySlug",
+								"wig"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL PRODUCTS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/product/getAllProducts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"getAllProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE PRODUCT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU5YzIwNjI1NjI4NGIyZjI2MjNkMTUiLCJpYXQiOjE2NjY4NDE3NjN9.vr-tRsqFWd8r_ZnZJ6tUK-uyHA-uogc23RxrELuFwlI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"name\": \"leash\",\r\n    \"price\": 78\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/updateProduct/6359f8cb6274cc0d0024c069",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"updateProduct",
+								"6359f8cb6274cc0d0024c069"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit IMAGES",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU5ZWFjOWE2MWMyMjcxYTFiM2RmZDMiLCJpYXQiOjE2NjY4MzcxOTh9.8OkckSbFdJy0x2SkJYFQNiJQ_db4w9S2GR281y-7NzE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/hp/Desktop/Images/gallery2-1.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/editImage/6359ec17a61c2271a1b3dfdb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"editImage",
+								"6359ec17a61c2271a1b3dfdb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "ADD ORDER",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzVhMzNiZGM2NTk0NTQ5ZmQyMDkwMGIiLCJpYXQiOjE2NjY4NjI2OTd9.p6T7K0T8o0KIfaqcTyZljVlj6itfJ0w8hGQyPTrvCPA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"phoneNumber\":\"201018310998\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/order/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"order",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ORDER",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzVhMzNiZGM2NTk0NTQ5ZmQyMDkwMGIiLCJpYXQiOjE2NjY4NjI2OTd9.p6T7K0T8o0KIfaqcTyZljVlj6itfJ0w8hGQyPTrvCPA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/order/getOrder/635a6ac3033845fe1ab30c94",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"order",
+								"getOrder",
+								"635a6ac3033845fe1ab30c94"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL USER ORDERS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzVhMzNiZGM2NTk0NTQ5ZmQyMDkwMGIiLCJpYXQiOjE2NjY4NjI2OTd9.p6T7K0T8o0KIfaqcTyZljVlj6itfJ0w8hGQyPTrvCPA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/order/getAllOrders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"order",
+								"getAllOrders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE ORDER BY USER",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzVhMzNiZGM2NTk0NTQ5ZmQyMDkwMGIiLCJpYXQiOjE2NjY4NjI2OTd9.p6T7K0T8o0KIfaqcTyZljVlj6itfJ0w8hGQyPTrvCPA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/order/deleteOrder/635a6ac3033845fe1ab30c94",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"order",
+								"deleteOrder",
+								"635a6ac3033845fe1ab30c94"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
